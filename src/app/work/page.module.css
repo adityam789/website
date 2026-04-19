@@ -1,0 +1,45 @@
+/* Shared page header style used by work, blog, about, contact */
+.pageHeader {
+    margin-bottom: 3rem;
+}
+
+.back {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--text-tertiary);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+}
+
+.back:hover {
+    color: var(--accent);
+}
+
+.pageTitle {
+    font-size: clamp(40px, 6vw, 72px);
+    margin-bottom: 1rem;
+    font-family: var(--font-display);
+}
+
+.pageDesc {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 500px;
+    line-height: 1.7;
+}
+
+/* Work-specific */
+.projectCard {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: start;
+}
+
+.projectFullDesc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-top: 4px;
+}

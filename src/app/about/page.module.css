@@ -1,0 +1,118 @@
+.pageHeader {
+    margin-bottom: 3rem;
+}
+
+.back {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--text-tertiary);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+}
+
+.back:hover {
+    color: var(--accent);
+}
+
+.pageTitle {
+    font-size: clamp(40px, 6vw, 72px);
+    margin-bottom: 1rem;
+    font-family: var(--font-display);
+}
+
+.pageDesc {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 520px;
+    line-height: 1.7;
+}
+
+.bioBlock {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 1rem;
+}
+
+.bioText {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.quickFacts {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-radius: var(--radius-md);
+    border: 0.5px solid var(--border);
+    overflow: hidden;
+}
+
+.factRow {
+    display: flex;
+    flex-direction: column;
+    padding: 0.85rem 1rem;
+    border-bottom: 0.5px solid var(--border);
+    background: var(--surface-subtle);
+}
+
+.factRow:last-child {
+    border-bottom: none;
+}
+
+.factLabel {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 2px;
+}
+
+.factValue {
+    font-size: 13px;
+    color: var(--text-primary);
+}
+
+.awardsList {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.awardRow {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 0.85rem 0;
+    border-bottom: 0.5px solid var(--border);
+}
+
+.awardTitle {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.awardDetail {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .bioBlock {
+        grid-template-columns: 1fr;
+    }
+
+    .awardRow {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+}
