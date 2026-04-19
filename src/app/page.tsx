@@ -130,8 +130,12 @@ export default function HomePage() {
 
               <div className={styles.cta}>
                 <Link href="/work" className="btn-primary">view my work</Link>
-                <a href="/resume.pdf" className="btn-secondary" download>download resume ↓</a>
+                <div style={{ display: 'flex', gap: '1rem' }}>
+                  <a href="/resume.pdf" className="btn-secondary" download>download resume ↓</a>
+                  <a href="/cv.pdf" className="btn-secondary" download>download cv ↓</a>
+                </div>
               </div>
+
             </div>
 
             {/* Right Column: Terminal */}
