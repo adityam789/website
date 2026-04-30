@@ -1,0 +1,18 @@
+export const tokens = {
+  bg:         'var(--dmp-bg)',
+  surface:    'var(--dmp-surface)',
+  surfaceAlt: 'var(--dmp-surface-alt)',
+  text:       'var(--dmp-text)',
+  textMuted:  'var(--dmp-text-muted)',
+  green:      'var(--dmp-green)',
+  yellow:     'var(--dmp-yellow)',
+  red:        'var(--dmp-red)',
+  border:     'var(--dmp-border)',
+  borderHover:'var(--dmp-border-hover)',
+  radius:     '12px',
+  radiusSm:   '8px',
+  radiusPill: '999px',
+  maxWidth:   '740px',
+  fontMono:   'var(--font-mono)',
+  fontSans:   'var(--font-geist-sans)',
+}
