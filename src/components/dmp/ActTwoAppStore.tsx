@@ -83,9 +83,17 @@ const ButtonPill = styled.button<{ $variant?: 'outline' }>`
   font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
 `
 
 const CollapsibleSection = styled.div`
@@ -251,8 +259,21 @@ export default function ActTwoAppStore({ onProceed }: { onProceed?: () => void }
               4.8 · 24 ratings · Free · No In-App Purchases
             </RatingRow>
             <ButtonRow>
-              <ButtonPill>Get</ButtonPill>
-              <ButtonPill $variant="outline">Share ↗</ButtonPill>
+              <ButtonPill 
+                as="a" 
+                href={process.env.NEXT_PUBLIC_INSTAGRAM_URL} 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Get
+              </ButtonPill>
+              <ButtonPill 
+                as="a" 
+                $variant="outline" 
+                href={`tel:${process.env.NEXT_PUBLIC_PHONE_NUMBER}`}
+              >
+                Share ↗
+              </ButtonPill>
             </ButtonRow>
           </AppInfo>
         </HeaderRow>
