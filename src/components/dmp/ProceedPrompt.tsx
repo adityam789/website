@@ -20,16 +20,16 @@ const NO_LABELS = [
 ]
 
 const REJECTIONS = [
-  "oh. okay. that's fine. i'm fine. totally fine.",
-  "i mean, i did warn you i was an awkward texter. this tracks.",
-  "no worries. someone else will eat the pasta i was going to make.",
-  "worst case we become friends, remember? the offer still stands.",
-  "my friends said this was a great idea. i'm going to tell them they were wrong.",
-  "noted. filing this under 'known bugs: shipping anyway'.",
-  "i was going to suggest a late night walk and bad conversation. your loss honestly.",
-  "this is fine. i have snacks. i will recover.",
-  "okay but herbal or verbal tea, the offer has no expiry date.",
-  "alright. i hope whoever gets a yes from you knows how lucky they are. 🍵",
+  "oh. okay. that's fine. i'm fine. [ yes ] is still right there though, just saying.",
+  "i did warn you about the awkward texting. it gets better. the yes button doesn't judge.",
+  "no worries. the pasta offer expires eventually though. not today, but eventually.",
+  "worst case we become friends, remember? yes covers that too. just so you know.",
+  "my friends are watching me send this into the void. one yes would really help my reputation.",
+  "filed under: known bugs. the yes button is still open source and judgment free.",
+  "late night walks. bad jokes. good food. the yes is still warm if you change your mind.",
+  "i have snacks and i will recover. the yes button will also recover. it's patient.",
+  "no expiry on the offer. herbal or verbal, whenever you're ready. yes is not going anywhere.",
+  "genuinely okay with this. but if you ever want good food and worse conversation, yes is here. 🍵",
 ]
 
 const GateContainer = styled.div`

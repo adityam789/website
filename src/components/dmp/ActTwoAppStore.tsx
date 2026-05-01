@@ -177,6 +177,52 @@ const Description = styled.p`
   margin-bottom: 2rem;
 `
 
+const WildLabel = styled.div`
+  font-family: ${tokens.fontMono};
+  font-size: 12px;
+  color: ${tokens.green};
+  margin-bottom: 0.75rem;
+`
+
+const WildGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+`
+
+const WildCard = styled.div`
+  background: ${tokens.surfaceAlt};
+  border: 1px solid ${tokens.border};
+  border-radius: 12px;
+  padding: 1rem;
+`
+
+const WildTimestamp = styled.div`
+  font-family: ${tokens.fontMono};
+  font-size: 11px;
+  color: ${tokens.textMuted};
+  margin-bottom: 0.5rem;
+`
+
+const WildBody = styled.div`
+  font-size: 13px;
+  line-height: 1.7;
+  color: ${tokens.text};
+`
+
+const InfoValueGreen = styled.div`
+  font-family: ${tokens.fontMono};
+  font-size: 0.875rem;
+  color: ${tokens.green};
+  border-bottom: 1px solid ${tokens.border};
+  padding: 0.75rem 0;
+`
+
 const ReviewCard = styled(motion.div)`
   min-width: 260px;
   background: ${tokens.surfaceAlt};
@@ -322,10 +368,30 @@ export default function ActTwoAppStore({ onProceed }: { onProceed?: () => void }
         </HorizontalRow>
         <MutedNote>// placeholder — replace with actual photos</MutedNote>
 
-        <Description>
-          An easy going, ambitious, and nerd enjoying small adventures 
-          and making good friends along the way.
-        </Description>
+        <WildLabel>&gt; in_the_wild.log</WildLabel>
+        <WildGrid>
+          <WildCard>
+            <WildTimestamp>sunday, ~1pm</WildTimestamp>
+            <WildBody>
+              49ers game on. food already made.
+              loud about the play calls. no one asked.
+            </WildBody>
+          </WildCard>
+          <WildCard>
+            <WildTimestamp>saturday, early</WildTimestamp>
+            <WildBody>
+              trailhead. slightly underprepared.
+              made it to the top anyway. took longer than expected.
+            </WildBody>
+          </WildCard>
+          <WildCard>
+            <WildTimestamp>friday, 8pm</WildTimestamp>
+            <WildBody>
+              new spot. friend group. ordered something
+              he couldn't fully pronounce. no regrets.
+            </WildBody>
+          </WildCard>
+        </WildGrid>
 
         <HorizontalRow drag="x" dragConstraints={{ left: -400, right: 0 }}>
           <ReviewCard>
@@ -355,14 +421,13 @@ export default function ActTwoAppStore({ onProceed }: { onProceed?: () => void }
 
         <InfoTable>
           <InfoRow><InfoLabel>Size</InfoLabel><InfoValue>5'10"</InfoValue></InfoRow>
-          <InfoRow><InfoLabel>Category</InfoLabel><InfoValue>Human / Companion</InfoValue></InfoRow>
-          <InfoRow><InfoLabel>Compatibility</InfoLabel><InfoValue>Most personality types</InfoValue></InfoRow>
           <InfoRow><InfoLabel>Languages</InfoLabel><InfoValue>English, Sarcasm, Food</InfoValue></InfoRow>
-          <InfoRow><InfoLabel>VEGETARIAN</InfoLabel><InfoValue>true</InfoValue></InfoRow>
-          <InfoRow><InfoLabel>ADVENTURE_READY</InfoLabel><InfoValue>true (latency: ~15min)</InfoValue></InfoRow>
-          <InfoRow><InfoLabel>Kids</InfoLabel><InfoValue>Don't have · not sure yet</InfoValue></InfoRow>
-          <InfoRow><InfoLabel>Religion</InfoLabel><InfoValue>Hindu</InfoValue></InfoRow>
-          <InfoRow><InfoLabel>Zodiac</InfoLabel><InfoValue>Libra ♎</InfoValue></InfoRow>
+          <InfoRow><InfoLabel>sundays (sep–feb)</InfoLabel><InfoValue>49ers. loud. non-negotiable.</InfoValue></InfoRow>
+          <InfoRow><InfoLabel>F1</InfoLabel><InfoValue>Red Bull. Verstappen era. will talk about it.</InfoValue></InfoRow>
+          <InfoRow><InfoLabel>weekend sport</InfoLabel><InfoValue>pickleball + basketball. competitive about both.</InfoValue></InfoRow>
+          <InfoRow><InfoLabel>cars</InfoLabel><InfoValue>enthusiast. mild to moderate. has opinions.</InfoValue></InfoRow>
+          <InfoRow><InfoLabel>restaurant rule</InfoLabel><InfoValue>always try the new spot. always.</InfoValue></InfoRow>
+          <InfoRow><InfoLabel>currently</InfoLabel><InfoValueGreen>ADVENTURE_READY: true&nbsp;&nbsp;(latency: ~15min)</InfoValueGreen></InfoRow>
         </InfoTable>
 
         <ProceedPrompt nextActId="act-three" onProceed={onProceed} />

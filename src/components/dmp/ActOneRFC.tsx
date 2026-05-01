@@ -126,6 +126,7 @@ const BOOT_LINES = [
   { text: 'calibrating awkward texting...', status: 'ok' as const },
   { text: 'warming up cooking playlist...', status: 'ok' as const },
   { text: 'loading trail maps...', status: 'ok' as const },
+  { text: '49ers_season_heartbreak_recovery.exe... still running', status: 'warn' as const },
   { text: 'EQ module (beta)... still patching...', status: 'warn' as const },
   { text: 'charm.exe loaded successfully', status: 'ok' as const },
 ]

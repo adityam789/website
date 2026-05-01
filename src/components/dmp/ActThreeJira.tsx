@@ -69,13 +69,50 @@ const Pill = styled.div`
   gap: 0.25rem;
 `
 
-const DescriptionBox = styled.div`
-  border: 1px solid ${tokens.border};
-  border-radius: ${tokens.radiusSm};
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  font-size: 0.875rem;
-  line-height: 1.6;
+const ActivityLabel = styled.div`
+  font-family: ${tokens.fontMono};
+  color: ${tokens.green};
+  font-size: 12px;
+  margin-bottom: 0.75rem;
+`
+
+const ActivityList = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+`
+
+const ActivityRow = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid ${tokens.border};
+
+  &:last-child {
+    border-bottom: none;
+  }
+`
+
+const ActivityDot = styled.div`
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: ${tokens.green};
+  flex-shrink: 0;
+`
+
+const ActivityText = styled.div`
+  font-family: ${tokens.fontMono};
+  font-size: 13px;
+  color: ${tokens.text};
+  flex: 1;
+`
+
+const ActivityTime = styled.div`
+  font-family: ${tokens.fontMono};
+  font-size: 11px;
+  color: ${tokens.textMuted};
 `
 
 const SectionLabel = styled.div`
@@ -244,13 +281,50 @@ NOTE:              outcome = relationship || friendship. both valid. both ship.`
             <Pill>❓ Assignee: TBD</Pill>
           </MetadataPillsRow>
 
-          <DescriptionBox>
-            Looking for someone to give this an honest shot. Not asking for 
-            perfection — asking for empathy, humor, and loyalty. The hallmark 
-            of a good relationship is a rage baiter and the rage baited. So 
-            looking for someone who has what it takes to bully me, and then 
-            go get dessert after.
-          </DescriptionBox>
+          <ActivityLabel>&gt; recent_activity</ActivityLabel>
+          <ActivityList
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-10%" }}
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.08
+                }
+              }
+            }}
+          >
+            <ActivityRow variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}>
+              <ActivityDot />
+              <ActivityText>aditya opened a new spot in the mission (ordered everything)</ActivityText>
+              <ActivityTime>2 days ago</ActivityTime>
+            </ActivityRow>
+            <ActivityRow variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}>
+              <ActivityDot />
+              <ActivityText>aditya committed to an unresolved f1 circuit debate</ActivityText>
+              <ActivityTime>3 days ago</ActivityTime>
+            </ActivityRow>
+            <ActivityRow variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}>
+              <ActivityDot />
+              <ActivityText>aditya deployed improved biryani v2.1 (more spice)</ActivityText>
+              <ActivityTime>last week</ActivityTime>
+            </ActivityRow>
+            <ActivityRow variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}>
+              <ActivityDot />
+              <ActivityText>aditya joined a 2v2 pickleball session (graceful defeat)</ActivityText>
+              <ActivityTime>last week</ActivityTime>
+            </ActivityRow>
+            <ActivityRow variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}>
+              <ActivityDot />
+              <ActivityText>aditya merged a foggy trail hike into the weekend</ActivityText>
+              <ActivityTime>2 weeks ago</ActivityTime>
+            </ActivityRow>
+            <ActivityRow variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}>
+              <ActivityDot />
+              <ActivityText>aditya pushed a small fix to his walk roster</ActivityText>
+              <ActivityTime>3 weeks ago</ActivityTime>
+            </ActivityRow>
+          </ActivityList>
 
           <SectionLabel>Acceptance Criteria</SectionLabel>
           <Checklist>
