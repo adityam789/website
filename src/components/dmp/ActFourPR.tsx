@@ -190,7 +190,7 @@ export default function ActFourPR() {
           </DiffStatsRow>
 
           <DescriptionBlock>
-            This PR adds one (1) nerdy, ambitious, easy going idiot to your life.{'\n\n'}
+            This PR adds one (1) nerdy, ambitious, easy going guy to your life.{'\n\n'}
             <AdditionLine>+ home cooked meals (vegetarian, actually good)</AdditionLine>{'\n'}
             <AdditionLine>+ someone who genuinely listens to all your gossip</AdditionLine>{'\n'}
             <AdditionLine>+ late night walks and off-tangent conversations</AdditionLine>{'\n'}

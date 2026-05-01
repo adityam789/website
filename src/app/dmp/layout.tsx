@@ -4,7 +4,7 @@ import { GlobalDmpStyles } from '../../styles/dmp/GlobalDmpStyles'
 
 export const metadata: Metadata = {
   title: 'RFC-2026: A Formal Proposal for Companionship',
-  description: 'Before Claude replaces boyfriends with Claude Men™, give this idiot a chance.',
+  description: 'Before Claude replaces boyfriends with Claude Men™, give this guy a chance.',
   openGraph: {
     title: 'RFC-2026 · Date Me Please',
     description: 'A formally engineered dating profile.',

@@ -198,7 +198,7 @@ export default function ActOneRFC({ onProceed }: { onProceed?: () => void }) {
         <Label>{'>'} abstract</Label>
         <BodyText>
           Before Claude replaces all boyfriend-shaped humans with Claude Men™, 
-          this document formally proposes giving one (1) idiot a chance. 
+          this document formally proposes giving one (1) dummy a chance. 
           The following specification outlines system capabilities, known bugs, 
           compatibility requirements, and a formal merge request.
         </BodyText>

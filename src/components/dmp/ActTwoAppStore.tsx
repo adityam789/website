@@ -251,7 +251,7 @@ export default function ActTwoAppStore({ onProceed }: { onProceed?: () => void }
           </AppIcon>
           <AppInfo>
             <AppName>Aditya™</AppName>
-            <AppTagline>An easy going, nerdy idiot for your adventures</AppTagline>
+            <AppTagline>An easy going, nerd for your adventures</AppTagline>
             <RatingRow>
               <Stars>
                 {[...Array(5)].map((_, i) => <Star key={i} size={14} fill={tokens.yellow} />)}
@@ -323,7 +323,7 @@ export default function ActTwoAppStore({ onProceed }: { onProceed?: () => void }
         <MutedNote>// placeholder — replace with actual photos</MutedNote>
 
         <Description>
-          An easy going, ambitious, and nerdy idiot enjoying small adventures 
+          An easy going, ambitious, and nerd enjoying small adventures 
           and making good friends along the way.
         </Description>
 
