@@ -302,7 +302,7 @@ export default function ActTwoAppStore({ onProceed }: { onProceed?: () => void }
               <Stars>
                 {[...Array(5)].map((_, i) => <Star key={i} size={14} fill={tokens.yellow} />)}
               </Stars>
-              4.8 · 24 ratings · Free · No In-App Purchases
+              4.8 · 3 verified ratings · Free · results may vary
             </RatingRow>
             <ButtonRow>
               <ButtonPill 
@@ -314,9 +314,8 @@ export default function ActTwoAppStore({ onProceed }: { onProceed?: () => void }
                 Get
               </ButtonPill>
               <ButtonPill 
-                as="a" 
                 $variant="outline" 
-                href={`tel:${process.env.NEXT_PUBLIC_PHONE_NUMBER}`}
+                onClick={() => navigator.clipboard.writeText(window.location.href)}
               >
                 Share ↗
               </ButtonPill>
@@ -340,7 +339,7 @@ export default function ActTwoAppStore({ onProceed }: { onProceed?: () => void }
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                • Improved EQ module (still in beta, shipping fast)<br/>
+                • Added: chilli garlic noodles (10pm build. no warning. worth it.)<br/>
                 • Fixed: introvert mode now transitions to ambivert after warmup<br/>
                 • Added: new cooking recipes, trail routes<br/>
                 • Known regression: first texts still occasionally awkward
@@ -366,7 +365,7 @@ export default function ActTwoAppStore({ onProceed }: { onProceed?: () => void }
             <ScreenshotLabel>somewhere nice</ScreenshotLabel>
           </ScreenshotCard>
         </HorizontalRow>
-        <MutedNote>// placeholder — replace with actual photos</MutedNote>
+        <MutedNote>&gt; photos loading from cloud... check back soon.</MutedNote>
 
         <WildLabel>&gt; in_the_wild.log</WildLabel>
         <WildGrid>
@@ -378,10 +377,10 @@ export default function ActTwoAppStore({ onProceed }: { onProceed?: () => void }
             </WildBody>
           </WildCard>
           <WildCard>
-            <WildTimestamp>saturday, early</WildTimestamp>
+            <WildTimestamp>sunday, no game</WildTimestamp>
             <WildBody>
-              trailhead. slightly underprepared.
-              made it to the top anyway. took longer than expected.
+              late start. grocery run. gym. made juice.
+              something on the stove. good show on. nowhere to be.
             </WildBody>
           </WildCard>
           <WildCard>
@@ -425,8 +424,8 @@ export default function ActTwoAppStore({ onProceed }: { onProceed?: () => void }
           <InfoRow><InfoLabel>sundays (sep–feb)</InfoLabel><InfoValue>49ers. loud. non-negotiable.</InfoValue></InfoRow>
           <InfoRow><InfoLabel>F1</InfoLabel><InfoValue>Red Bull. Verstappen era. will talk about it.</InfoValue></InfoRow>
           <InfoRow><InfoLabel>weekend sport</InfoLabel><InfoValue>pickleball + basketball. competitive about both.</InfoValue></InfoRow>
-          <InfoRow><InfoLabel>cars</InfoLabel><InfoValue>enthusiast. mild to moderate. has opinions.</InfoValue></InfoRow>
-          <InfoRow><InfoLabel>restaurant rule</InfoLabel><InfoValue>always try the new spot. always.</InfoValue></InfoRow>
+          <InfoRow><InfoLabel>default setting</InfoLabel><InfoValue>present. will remember your order.</InfoValue></InfoRow>
+          <InfoRow><InfoLabel>food policy</InfoLabel><InfoValue>no veto on cravings. ever.</InfoValue></InfoRow>
           <InfoRow><InfoLabel>currently</InfoLabel><InfoValueGreen>ADVENTURE_READY: true&nbsp;&nbsp;(latency: ~15min)</InfoValueGreen></InfoRow>
         </InfoTable>
 

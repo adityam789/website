@@ -186,10 +186,10 @@ const SimplePleasures = styled.div`
 `
 
 const CHECKLIST_ITEMS = [
-  'Vegetarian friendly',
-  'Will not flake on adventures (post-inertia)',
-  'Herbal AND verbal tea certified',
-  'No Claude Men were harmed in this proposal',
+  'Vegetarian friendly (will cook around it)',
+  'Shows up. Every time.',
+  'Available in both loud and quiet modes',
+  'Ships on time (emotionally)',
   'Open source (what you see is what you get)',
 ]
 
@@ -234,20 +234,22 @@ export default function ActFourPR() {
             <DiffHeader>
               <DiffFileName>aditya_to_your_life.diff</DiffFileName>
               <DiffStats>
-                <span style={{ color: tokens.green }}>+8</span>
+                <span style={{ color: tokens.green }}>+11</span>
                 <span style={{ color: tokens.textMuted }}> </span>
                 <span style={{ color: tokens.red }}>−2</span>
               </DiffStats>
             </DiffHeader>
             <DiffBody>
               <DiffLine $type="add" variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }} transition={{ delay: 0.06 }}>+ will try the new restaurant even if it has 3 google reviews</DiffLine>
-              <DiffLine $type="add" variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }} transition={{ delay: 0.12 }}>+ passenger seat co-pilot. good music mandatory.</DiffLine>
+              <DiffLine $type="add" variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }} transition={{ delay: 0.12 }}>+ passenger seat co-pilot. good music, always.</DiffLine>
               <DiffLine $type="add" variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }} transition={{ delay: 0.18 }}>+ watches races at 6am (red bull fan. negotiable on the team.)</DiffLine>
               <DiffLine $type="add" variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }} transition={{ delay: 0.24 }}>+ loses at pickleball with moderate grace</DiffLine>
               <DiffLine $type="add" variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }} transition={{ delay: 0.30 }}>+ shows up to the hike slightly underprepared. makes it anyway.</DiffLine>
               <DiffLine $type="add" variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }} transition={{ delay: 0.36 }}>+ cooks something good. will make extra.</DiffLine>
               <DiffLine $type="add" variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }} transition={{ delay: 0.42 }}>+ actually listens. like, properly.</DiffLine>
-              <DiffLine $type="add" variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }} transition={{ delay: 0.48 }}>+ defaults to yes on most adventures (post-inertia)</DiffLine>
+              <DiffLine $type="add" variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }} transition={{ delay: 0.48 }}>+ will remember the thing you mentioned once. weeks later.</DiffLine>
+              <DiffLine $type="add" variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }} transition={{ delay: 0.54 }}>+ will immediately befriend your dog.</DiffLine>
+              <DiffLine $type="add" variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }} transition={{ delay: 0.60 }}>+ defaults to yes on most adventures (post-inertia)</DiffLine>
               <DiffLine $type="del" variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }} transition={{ delay: 0.54 }}>− needs a full itinerary before committing to saturday</DiffLine>
               <DiffLine $type="del" variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }} transition={{ delay: 0.60 }}>− has no food opinions whatsoever</DiffLine>
             </DiffBody>
@@ -265,6 +267,15 @@ export default function ActFourPR() {
             </ReviewerInfo>
           </ReviewerRow>
         </PRHeaderBox>
+
+        <ChecklistContainer>
+          {CHECKLIST_ITEMS.map((item, i) => (
+            <CheckItem key={i} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              <span style={{ color: tokens.green }}>✓</span>
+              <span style={{ fontFamily: tokens.fontMono, fontSize: '0.75rem' }}>{item}</span>
+            </CheckItem>
+          ))}
+        </ChecklistContainer>
 
         <ConfettiButton />
 

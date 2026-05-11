@@ -151,7 +151,10 @@ export default function ConfettiButton() {
           >
             <GitMerge size={28} color={tokens.green} />
             <RevealTitle>PR merged into: your-life</RevealTitle>
-            <RevealMainText>Aditya merged this — say hi 👋</RevealMainText>
+            <RevealMainText>the RFC is a bit much. say hi anyway.</RevealMainText>
+            <div style={{ fontFamily: tokens.fontMono, fontSize: '0.75rem', color: tokens.textMuted, marginBottom: '1.5rem', textAlign: 'center' }}>
+              you read the whole thing. that already says something.
+            </div>
             <InstaLink href="https://instagram.com/aditya_mahi05" target="_blank" rel="noopener noreferrer">
               <AtSign size={18} />
               @aditya_mahi05

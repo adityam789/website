@@ -237,8 +237,7 @@ export default function ActThreeJira({ onProceed }: { onProceed?: () => void }) 
   }
 
   const specText = `REQUIRED:          honesty, humor, appetite (food + life)
-OPTIONAL:          fellow foodie, adventure curious, dog person
-INCOMPATIBLE_WITH: people unwilling to give it a real shot
+OPTIONAL:          fellow foodie, adventure curious, down for 11pm conversations
 NOTE:              outcome = relationship || friendship. both valid. both ship.`
 
   return (
@@ -301,7 +300,7 @@ NOTE:              outcome = relationship || friendship. both valid. both ship.`
             </ActivityRow>
             <ActivityRow variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}>
               <ActivityDot />
-              <ActivityText>aditya committed to an unresolved f1 circuit debate</ActivityText>
+              <ActivityText>aditya showed up with food, no announcement.</ActivityText>
               <ActivityTime>3 days ago</ActivityTime>
             </ActivityRow>
             <ActivityRow variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}>
@@ -321,18 +320,18 @@ NOTE:              outcome = relationship || friendship. both valid. both ship.`
             </ActivityRow>
             <ActivityRow variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}>
               <ActivityDot />
-              <ActivityText>aditya pushed a small fix to his walk roster</ActivityText>
+              <ActivityText>aditya remembered something from three weeks ago and followed through.</ActivityText>
               <ActivityTime>3 weeks ago</ActivityTime>
             </ActivityRow>
           </ActivityList>
 
           <SectionLabel>Acceptance Criteria</SectionLabel>
           <Checklist>
-            <CheckItem><CheckboxUI /> Willing to give it an honest shot</CheckItem>
-            <CheckItem><CheckboxUI /> Has what it takes to bully me, then get dessert after</CheckItem>
+            <CheckItem><CheckboxUI /> Will tell me when I'm wrong (lovingly or otherwise)</CheckItem>
+            <CheckItem><CheckboxUI /> Will give me grief about the underprepared hike and show up to the next one anyway</CheckItem>
             <CheckItem><CheckboxUI /> Will share tea — herbal OR verbal, both accepted</CheckItem>
-            <CheckItem><CheckboxUI /> Enjoys late night walks, off-tangent conversations, sunsets</CheckItem>
-            <CheckItem><CheckboxUI /> Empathy ✓ Humor ✓ Loyalty ✓</CheckItem>
+            <CheckItem><CheckboxUI /> Has something they're quietly obsessed with. will explain it unprompted.</CheckItem>
+            <CheckItem><CheckboxUI /> Knows the difference between a quiet night and a lonely one</CheckItem>
           </Checklist>
 
           <SpecBlock>{specText}</SpecBlock>
@@ -355,6 +354,11 @@ NOTE:              outcome = relationship || friendship. both valid. both ship.`
               <div>ADVENTURE_INERTIA</div>
               <div><BugSeverity $level="LOW">LOW</BugSeverity></div>
               <div>high latency to start, zero latency once rolling</div>
+            </BugRow>
+            <BugRow>
+              <div>INTERNALIZES_THINGS</div>
+              <div><BugSeverity $level="LOW">LOW</BugSeverity></div>
+              <div>won't always say when something's off. ask him. he'll tell you.</div>
             </BugRow>
           </BugsTable>
 
@@ -393,7 +397,7 @@ NOTE:              outcome = relationship || friendship. both valid. both ship.`
               <Avatar>V2</Avatar>
               <CommentContent>
                 <CommentMeta>verified_friend_02 · 5 days ago</CommentMeta>
-                <CommentBody>Super nice. I am legally required to say this but also it's true.</CommentBody>
+                <CommentBody>Does what he says he'll do. Annoying how consistently, actually.</CommentBody>
               </CommentContent>
             </CommentBlock>
           </CommentsSection>
