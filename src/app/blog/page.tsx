@@ -1,6 +1,7 @@
 import Reveal from '../../components/Reveal';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { formatDate, getAllPosts } from '../../lib/blog';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
     description: 'Writing on software engineering, AI, and life.',
 };
 
-const POSTS = [
+const UPCOMING = [
     { title: 'How I automated 30,000 investigator hours with a single pipeline', tag: 'Tech' },
     { title: 'Building LLM agents that actually work in production', tag: 'Tech' },
     { title: 'Cloud migration lessons: moving compliance infra to GCP', tag: 'Tech' },
@@ -20,6 +21,8 @@ const POSTS = [
 ];
 
 export default function BlogPage() {
+    const published = getAllPosts();
+    const offset = published.length;
     return (
         <div className="section">
             <div className="container">
@@ -43,10 +46,25 @@ export default function BlogPage() {
                 </Reveal>
 
                 <div style={{ marginTop: '1.5rem' }}>
-                    {POSTS.map((p, i) => (
-                        <Reveal key={p.title} delay={i * 55}>
-                            <div className="blog-row">
+                    {published.map((p, i) => (
+                        <Reveal key={p.slug} delay={i * 55}>
+                            <Link href={`/blog/${p.slug}`} className="blog-row">
                                 <span className="blog-num mono">{String(i + 1).padStart(2, '0')}</span>
+                                <span className="blog-title">
+                                    {p.title}
+                                    <span className={styles.excerpt}>{p.excerpt}</span>
+                                </span>
+                                <div className="blog-meta">
+                                    <span className="tag">{p.tag}</span>
+                                    <span className="blog-date">{formatDate(p.date)} · {p.readMinutes} min</span>
+                                </div>
+                            </Link>
+                        </Reveal>
+                    ))}
+                    {UPCOMING.map((p, i) => (
+                        <Reveal key={p.title} delay={(offset + i) * 55}>
+                            <div className="blog-row">
+                                <span className="blog-num mono">{String(offset + i + 1).padStart(2, '0')}</span>
                                 <span className="blog-title">{p.title}</span>
                                 <div className="blog-meta">
                                     <span className={`tag ${p.tag === 'Life' ? styles.tagLife : ''}`}>{p.tag}</span>

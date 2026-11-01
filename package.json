@@ -11,10 +11,15 @@
   "dependencies": {
     "canvas-confetti": "^1.9.4",
     "framer-motion": "^12.38.0",
+    "github-slugger": "^2.0.0",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^1.14.0",
     "next": "16.2.4",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "react-markdown": "^10.1.0",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.1",
     "styled-components": "^6.4.1"
   },
   "devDependencies": {

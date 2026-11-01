@@ -28,6 +28,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mahicodes.com'),
   title: 'Aditya Maheshwari — Software Engineer',
   description:
     'Software engineer at PayPal. I build backend systems, AI tools, and occasionally very good pasta. Based in San Jose, CA.',

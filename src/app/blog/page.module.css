@@ -55,3 +55,11 @@
     border-color: rgba(40, 200, 64, 0.3);
     color: #28A836;
 }
+.excerpt {
+    display: block;
+    margin-top: 4px;
+    max-width: 560px;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--text-tertiary);
+}

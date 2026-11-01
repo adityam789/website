@@ -89,6 +89,14 @@ const LIFE = [
 ];
 
 /* ── Blog posts ── */
+const PUBLISHED_POSTS = [
+  {
+    slug: 'looks-good-to-the-model',
+    title: 'Looks Good to the Model: The Discernment Gap in Agentic Coding',
+    date: 'Nov 2026',
+  },
+];
+
 const TECH_POSTS = [
   'How I automated 30,000 investigator hours with a single pipeline',
   'Building LLM agents that actually work in production',
@@ -284,10 +292,23 @@ export default function HomePage() {
             </div>
           </Reveal>
 
+          {/* Published posts (home is a client component, so keep this list in sync with src/content/blog) */}
+          {PUBLISHED_POSTS.map((p, i) => (
+            <Reveal key={p.slug} delay={i * 60}>
+              <Link href={`/blog/${p.slug}`} className="blog-row">
+                <span className="blog-num mono">{String(i + 1).padStart(2, '0')}</span>
+                <span className="blog-title">{p.title}</span>
+                <div className="blog-meta">
+                  <span className="blog-date">{p.date}</span>
+                </div>
+              </Link>
+            </Reveal>
+          ))}
+
           {[...TECH_POSTS, ...LIFE_POSTS].map((title, i) => (
             <Reveal key={title} delay={i * 60}>
               <div className="blog-row">
-                <span className="blog-num mono">{String(i + 1).padStart(2, '0')}</span>
+                <span className="blog-num mono">{String(i + PUBLISHED_POSTS.length + 1).padStart(2, '0')}</span>
                 <span className="blog-title">{title}</span>
                 <div className="blog-meta">
                   <span className="badge-soon">coming soon</span>
