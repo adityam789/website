@@ -1,0 +1,146 @@
+.figure {
+  margin: 2.5em 0;
+  font-family: var(--font-sans);
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 720px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.edge {
+  fill: none;
+  stroke: var(--text-tertiary);
+  stroke-width: 1.5;
+}
+
+.edgeDashed {
+  stroke-dasharray: 5 4;
+}
+
+.edgeLoop {
+  stroke: var(--accent);
+}
+
+.arrowHead {
+  fill: var(--text-tertiary);
+}
+
+.arrowHeadLoop {
+  fill: var(--accent);
+}
+
+.node {
+  stroke-width: 1.5;
+}
+
+.ink {
+  fill: var(--text-primary);
+  stroke: var(--text-primary);
+}
+
+.teal {
+  fill: rgba(43, 181, 160, 0.13);
+  stroke: #2bb5a0;
+}
+
+.amber {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+}
+
+.plain {
+  fill: var(--surface);
+  stroke: var(--border-strong);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  fill: var(--text-primary);
+}
+
+.sub {
+  font-size: 13px;
+  fill: var(--text-secondary);
+}
+
+.inkTitle {
+  font-family: var(--font-display);
+  font-size: 22px;
+  fill: var(--bg);
+}
+
+.inkSub {
+  font-size: 13px;
+  fill: var(--bg);
+  opacity: 0.75;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  fill: var(--text-tertiary);
+}
+
+.labelLoop {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  fill: var(--accent);
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  fill: var(--text-tertiary);
+}
+
+.caption {
+  margin-top: 1rem;
+  font-size: 12px;
+  text-align: center;
+  color: var(--text-tertiary);
+}
+
+/* ── convergence diagram ── */
+.company {
+  fill: var(--surface);
+  stroke: var(--text-primary);
+  stroke-width: 1.5;
+}
+
+.move {
+  fill: rgba(43, 181, 160, 0.13);
+  stroke: #2bb5a0;
+  stroke-width: 1;
+}
+
+.moveBar {
+  fill: var(--accent);
+}
+
+.link {
+  fill: none;
+  stroke: #2bb5a0;
+  stroke-width: 1.8;
+  opacity: 0.85;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 500;
+  fill: var(--text-primary);
+}
+
+.moveNum {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  fill: var(--accent);
+}

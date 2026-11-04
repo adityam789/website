@@ -3,6 +3,11 @@ import ReactMarkdown, { type Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import Ladder from './Ladder';
+import EgmFlow from './diagrams/EgmFlow';
+import Blueprint from './diagrams/Blueprint';
+import Convergence from './diagrams/Convergence';
+import JudgeCost from './charts/JudgeCost';
+import MissionTime from './charts/MissionTime';
 import styles from './PostBody.module.css';
 
 /** Known image sizes (px) so next/image can reserve space without layout shift. */
@@ -10,6 +15,9 @@ const IMAGE_SIZES: Record<string, [number, number]> = {
   'verifiability.png': [1920, 819],
   'discernment-loop.png': [1024, 1536],
   'cover.png': [1672, 941],
+  'patterns-map.png': [1672, 941],
+  'swarm-vs-hierarchy.png': [1672, 941],
+  'checklist.png': [1254, 1254],
 };
 
 const PILLS: Record<string, string> = {
@@ -82,7 +90,7 @@ const components: Components = {
   img: ({ src, alt }) => {
     if (typeof src !== 'string') return null;
     const [w, h] = IMAGE_SIZES[src.split('/').pop() ?? ''] ?? [1200, 700];
-    const tall = h > w;
+    const tall = h >= w;
     return (
       <figure className={`${styles.figure} ${tall ? styles.figureTall : ''}`}>
         <Image src={src} alt={alt ?? ''} width={w} height={h} sizes="(max-width: 900px) 100vw, 760px" />
@@ -94,6 +102,11 @@ const components: Components = {
   pre: ({ children }) => <>{children}</>,
   code: ({ className, children }) => {
     if (className === 'language-ladder') return <Ladder />;
+    if (className === 'language-diagram-egm') return <EgmFlow />;
+    if (className === 'language-diagram-blueprint') return <Blueprint />;
+    if (className === 'language-diagram-convergence') return <Convergence />;
+    if (className === 'language-chart-judge-cost') return <JudgeCost />;
+    if (className === 'language-chart-mission-time') return <MissionTime />;
     if (className) {
       return (
         <pre className={styles.codeBlock}>

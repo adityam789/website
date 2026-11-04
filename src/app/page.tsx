@@ -91,6 +91,11 @@ const LIFE = [
 /* ── Blog posts ── */
 const PUBLISHED_POSTS = [
   {
+    slug: 'every-serious-agent-harness-makes-the-same-four-moves',
+    title: 'Every serious agent harness makes the same four moves',
+    date: 'Nov 2026',
+  },
+  {
     slug: 'looks-good-to-the-model',
     title: 'Looks Good to the Model: The Discernment Gap in Agentic Coding',
     date: 'Nov 2026',
