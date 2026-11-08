@@ -14,13 +14,10 @@ const BAR_H = 36;
 
 /** Where one 16.5-hour Factory mission spent its time (single stacked bar, 3 segments). */
 export default function MissionTime() {
-  let cursor = X0;
   const total = SEGMENTS.reduce((s, d) => s + d.pct, 0);
-  const placed = SEGMENTS.map(s => {
-    const w = (s.pct / total) * W;
-    const seg = { ...s, x: cursor, w };
-    cursor += w;
-    return seg;
+  const placed = SEGMENTS.map((s, i) => {
+    const before = SEGMENTS.slice(0, i).reduce((sum, d) => sum + d.pct, 0);
+    return { ...s, x: X0 + (before / total) * W, w: (s.pct / total) * W };
   });
 
   return (

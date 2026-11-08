@@ -71,7 +71,7 @@ export default async function PostPage({ params }: Props) {
             <div className={styles.cover}>
               <Image
                 src={post.cover}
-                alt="A monitor showing a code diff with a green checkmark, and a mirror beside it reflecting the same checkmark."
+                alt={post.coverAlt ?? post.title}
                 width={1672}
                 height={941}
                 priority

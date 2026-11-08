@@ -6,6 +6,9 @@ import Ladder from './Ladder';
 import EgmFlow from './diagrams/EgmFlow';
 import Blueprint from './diagrams/Blueprint';
 import Convergence from './diagrams/Convergence';
+import WritePath from './diagrams/WritePath';
+import FanoutRace from './diagrams/FanoutRace';
+import OwnerRegion from './diagrams/OwnerRegion';
 import JudgeCost from './charts/JudgeCost';
 import MissionTime from './charts/MissionTime';
 import styles from './PostBody.module.css';
@@ -18,6 +21,7 @@ const IMAGE_SIZES: Record<string, [number, number]> = {
   'patterns-map.png': [1672, 941],
   'swarm-vs-hierarchy.png': [1672, 941],
   'checklist.png': [1254, 1254],
+  'decision-card.png': [1254, 1254],
 };
 
 const PILLS: Record<string, string> = {
@@ -105,6 +109,9 @@ const components: Components = {
     if (className === 'language-diagram-egm') return <EgmFlow />;
     if (className === 'language-diagram-blueprint') return <Blueprint />;
     if (className === 'language-diagram-convergence') return <Convergence />;
+    if (className === 'language-diagram-write-path') return <WritePath />;
+    if (className === 'language-diagram-fanout-race') return <FanoutRace />;
+    if (className === 'language-diagram-owner-region') return <OwnerRegion />;
     if (className === 'language-chart-judge-cost') return <JudgeCost />;
     if (className === 'language-chart-mission-time') return <MissionTime />;
     if (className) {

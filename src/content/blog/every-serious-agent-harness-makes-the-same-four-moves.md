@@ -4,6 +4,7 @@ excerpt: "Google, Factory, Cursor, Stripe, Spotify and Ramp built very different
 date: "2026-11-04"
 tag: "Tech"
 cover: "/blog/every-harness-makes-the-same-four-moves/cover.png"
+coverAlt: "A glowing amber cube in the center of four translucent teal walls, each marked with an icon: a document, a balance scale, a gear and a database."
 ---
 
 ## The $9 app that did not work

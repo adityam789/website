@@ -12,6 +12,7 @@ export interface PostMeta {
   date: string; // ISO yyyy-mm-dd
   tag: 'Tech' | 'Life';
   cover?: string;
+  coverAlt?: string;
   draft: boolean;
   readMinutes: number;
 }
@@ -58,6 +59,7 @@ function parse(slug: string): Post {
     date: typeof data.date === 'string' ? data.date : new Date(data.date).toISOString().slice(0, 10),
     tag: data.tag ?? 'Tech',
     cover: data.cover,
+    coverAlt: data.coverAlt,
     draft: Boolean(data.draft),
     readMinutes: Math.max(1, Math.round(words / 220)),
     content,
@@ -75,7 +77,7 @@ export function getAllPosts(): PostMeta[] {
     .sort((a, b) => (a.date < b.date ? 1 : -1))
     .map(p => ({
       slug: p.slug, title: p.title, excerpt: p.excerpt, date: p.date,
-      tag: p.tag, cover: p.cover, draft: p.draft, readMinutes: p.readMinutes,
+      tag: p.tag, cover: p.cover, coverAlt: p.coverAlt, draft: p.draft, readMinutes: p.readMinutes,
     }));
 }
 

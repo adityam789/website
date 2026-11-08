@@ -4,6 +4,7 @@ excerpt: "The typing got cheap. The judging did not. On prompts, harnesses, loop
 date: "2026-11-01"
 tag: "Tech"
 cover: "/blog/looks-good-to-the-model/cover.png"
+coverAlt: "A monitor showing a code diff with a green checkmark, and a mirror beside it reflecting the same checkmark."
 ---
 
 ## From typing code to approving it

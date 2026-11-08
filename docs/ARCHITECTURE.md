@@ -33,7 +33,7 @@ src/app/
 src/components/       Nav, Footer, Reveal, ScrollProgress, ThemeProvider (+ Nav/Footer .module.css)
 src/components/dmp/   ActOneRFC, ActTwoAppStore, ActThreeJira, ActFourPR, ProceedPrompt, TerminalTransition,
                       ConfettiButton, StyledComponentsRegistry
-src/content/blog/     *.md posts (frontmatter: title, excerpt, date, tag, cover, draft)
+src/content/blog/     *.md posts (frontmatter: title, excerpt, date, tag, cover, coverAlt, draft)
 src/components/blog/  PostBody (markdown renderer + custom elements), Ladder, TableOfContents
 src/lib/blog.ts       getAllPosts/getPost/formatDate
 public/blog/<slug>/   post images (add known sizes to IMAGE_SIZES in PostBody.tsx)

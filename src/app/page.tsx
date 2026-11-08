@@ -91,6 +91,11 @@ const LIFE = [
 /* ── Blog posts ── */
 const PUBLISHED_POSTS = [
   {
+    slug: 'idempotency-keys-are-a-consensus-problem',
+    title: 'Idempotency Keys Are a Consensus Problem: Notes From a Global Cache Rabbit Hole',
+    date: 'Nov 2026',
+  },
+  {
     slug: 'every-serious-agent-harness-makes-the-same-four-moves',
     title: 'Every serious agent harness makes the same four moves',
     date: 'Nov 2026',
