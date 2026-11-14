@@ -4,8 +4,7 @@ excerpt: "A service I depend on reported perfect availability for a full day whi
 date: "2026-11-14"
 tag: "Tech"
 cover: "/blog/availability-said-100/cover.png"
-coverAlt: "A dashboard gauge reading 100 percent beside a row of server pods, one of them flickering between on and off."
-draft: true
+coverAlt: "A glowing teal gauge with a checkmark beside a row of five server cubes; the middle cube is dim and outlined in amber, and a dotted amber line stops short of the row."
 ---
 
 ## The deploy that was supposed to lower errors

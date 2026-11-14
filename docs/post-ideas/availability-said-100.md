@@ -1,6 +1,6 @@
 # Post idea: Availability said 100%. The service was down.
 
-Status: DRAFTED 2026-11-14 as src/content/blog/availability-said-100.md (draft: true, waiting on cover.png in public/blog/availability-said-100/, 1672x941). Answers received: ATB = availability to the business (success / total x 100); delay was event-driven volume ramping from ~100 to ~10,000; fixes were alerts, a documented path and an escalation chain. Still unverified: what the gateway means by 533, whether the gateway is Envoy-based. Outline follows. Format: incident story, then a field guide to what to monitor.
+Status: DRAFTED 2026-11-14 as src/content/blog/availability-said-100.md (published in the repo 2026-11-14, cover placed). Answers received: ATB = availability to the business (success / total x 100); delay was event-driven volume ramping from ~100 to ~10,000; fixes were alerts, a documented path and an escalation chain. Still unverified: what the gateway means by 533, whether the gateway is Envoy-based. Outline follows. Format: incident story, then a field guide to what to monitor.
 
 Tags: [A] Aditya's account or claim. [R] researched, source linked. [+] angle I'm suggesting. [?] verify before publishing. [!] correction or caution.
 
