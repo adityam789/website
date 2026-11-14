@@ -3,6 +3,8 @@ title: "Zero-Shot Is a Demo: Calibrated on Your Data Is a Product"
 excerpt: "Part 2 of 3 on decision models. They are fast, cheap and good out of the box. In payments or any regulated setting, that isn't the bar. On calibration, fitting, and a ladder for adopting them without betting the business."
 date: "2026-11-14"
 tag: "Tech"
+cover: "/blog/decision-models-2-zero-shot-is-a-demo/cover.png"
+coverAlt: "A glass balance scale with a glowing amber sphere in one pan and a stack of checked tiles in the other, in front of a dial whose needle sits just off centre."
 draft: true
 ---
 

@@ -3,7 +3,8 @@ title: "A Decision Model Is Still a Language Model: It Just Stopped Talking"
 excerpt: "Part 1 of 3 on decision models. What they are, where they came from in the space of two months, and why 'it doesn't write text, so it isn't an LLM' gets the architecture wrong."
 date: "2026-11-14"
 tag: "Tech"
-draft: true
+cover: "/blog/decision-models-1-still-a-language-model/cover.png"
+coverAlt: "Two identical towers of stacked glass layers. A dashed amber ribbon streams out of the left one; the right one is capped with a small panel of three bars."
 ---
 
 ## "It doesn't write anything, so it isn't an LLM"
