@@ -1,6 +1,6 @@
 # Post idea: decision models (a three-part series)
 
-Status: researched outlines from Aditya's voice dump, 2026-11-14. Not drafted. Recommendation: three posts, not one. The dump holds three separate arguments (what it is, how to use it responsibly, where it fits), each with its own evidence.
+Status: all three posts DRAFTED 2026-11-14 (src/content/blog/decision-models-{1,2,3}-*.md, draft: true, no covers yet). Post 2 has a closing line promising experiment numbers on a public banking-intent dataset: add a results section when the experiment in experiments/decision-models/ exists, or remove that line. Constraint from Aditya: no mention of PayPal or employer in these posts; payments only as an industry. Outlines follow. Recommendation: three posts, not one. The dump holds three separate arguments (what it is, how to use it responsibly, where it fits), each with its own evidence.
 
 Tags: [A] Aditya's claim. [R] researched, source below. [+] angle I'm suggesting. [?] verify before publishing. [!] correction to the dump.
 
