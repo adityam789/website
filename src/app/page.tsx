@@ -16,14 +16,18 @@ export default function HomePage() {
       <section className={styles.hero} id="home">
         <div className="container">
           <div className={styles.heroGrid}>
-            <div>
+            <div className={styles.heroIntro}>
               <p className={`label-caps ${styles.eyebrow}`}>
                 {site.role} at {site.employer} · {site.location}
               </p>
               <h1 className={`display ${styles.heroName}`}>
-                Aditya <br />Maheshwari<span className={styles.nameDot}>.</span>
+                Aditya <br /><em>Maheshwari</em><span className={styles.nameDot}>.</span>
               </h1>
-              <p className={styles.lead}>{site.lead}</p>
+              <p className={styles.lead}>
+                I build the backend systems that <strong>move money safely</strong>: fraud recovery, regulatory
+                reporting, and the platform underneath them. Lately I also write about{' '}
+                <strong>engineering with AI agents</strong>.
+              </p>
               <div className={styles.cta}>
                 <Link href="/work" className="btn-primary">see the work →</Link>
                 <Link href="/blog" className="btn-secondary">read the writing</Link>
@@ -68,7 +72,7 @@ export default function HomePage() {
         <div className="container">
           <Reveal>
             <div className="section-header">
-              <h2 className="label-caps">selected work</h2>
+              <h2 className="label-caps"><span className="sec-num">01</span>selected work</h2>
               <Link href="/work" className="section-more">all work →</Link>
             </div>
           </Reveal>
@@ -87,7 +91,7 @@ export default function HomePage() {
         <div className="container">
           <Reveal>
             <div className="section-header">
-              <h2 className="label-caps">recent writing</h2>
+              <h2 className="label-caps"><span className="sec-num">02</span>recent writing</h2>
               <Link href="/blog" className="section-more">all posts →</Link>
             </div>
           </Reveal>
@@ -115,7 +119,7 @@ export default function HomePage() {
         <div className="container">
           <Reveal>
             <div className="section-header">
-              <h2 className="label-caps">side projects</h2>
+              <h2 className="label-caps"><span className="sec-num">03</span>side projects</h2>
             </div>
           </Reveal>
           {PROJECTS.map((p, i) => {
@@ -151,7 +155,7 @@ export default function HomePage() {
         <div className="container">
           <Reveal>
             <div className="section-header">
-              <h2 className="label-caps">outside the terminal</h2>
+              <h2 className="label-caps"><span className="sec-num">04</span>outside the terminal</h2>
             </div>
             <ul className="life-row">
               {LIFE.map(c => (

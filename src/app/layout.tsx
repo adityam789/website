@@ -5,6 +5,7 @@ import { ThemeProvider } from '../components/ThemeProvider';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import ScrollProgress from '../components/ScrollProgress';
+import PointerGlow from '../components/PointerGlow';
 import CommandPalette, { type PaletteItem } from '../components/CommandPalette';
 import { getAllPosts } from '../lib/blog';
 import { site, NAV_LINKS } from '../data/site';
@@ -85,6 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Nav />
           <main id="main">{children}</main>
           <Footer />
+          <PointerGlow />
           <CommandPalette items={paletteItems()} />
         </ThemeProvider>
       </body>

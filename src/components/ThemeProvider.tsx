@@ -15,9 +15,15 @@ const getServerSnapshot = (): Theme => 'light';
 
 function toggle() {
   const next: Theme = getSnapshot() === 'dark' ? 'light' : 'dark';
-  document.documentElement.classList.toggle('dark', next === 'dark');
+  const apply = () => {
+    document.documentElement.classList.toggle('dark', next === 'dark');
+    listeners.forEach(l => l());
+  };
   try { localStorage.setItem('theme', next); } catch { /* private mode */ }
-  listeners.forEach(l => l());
+  // Cross-fade the whole page between themes where the browser supports it.
+  const doc = document as Document & { startViewTransition?: (cb: () => void) => unknown };
+  if (doc.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) doc.startViewTransition(apply);
+  else apply();
 }
 
 const ThemeCtx = createContext<{ theme: Theme; toggle: () => void }>({ theme: 'light', toggle });

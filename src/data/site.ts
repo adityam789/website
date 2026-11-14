@@ -11,8 +11,6 @@ export const site = {
   linkedin: { handle: 'aditya-maheshwari-05', url: 'https://linkedin.com/in/aditya-maheshwari-05' },
   description:
     'Software engineer at PayPal. I build backend systems, AI tools, and occasionally very good pasta. Based in San Jose, CA.',
-  lead:
-    'I build the backend systems that move money safely: fraud recovery, regulatory reporting, and the platform underneath them. Lately I also write about engineering with AI agents.',
 };
 
 export const NAV_LINKS = [
