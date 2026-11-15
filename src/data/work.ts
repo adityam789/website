@@ -106,9 +106,56 @@ export const TEACHING = [
   },
 ];
 
-export interface Project { name: string; year: string; short: string; desc: string; tags: string[]; href?: string }
+export interface ProjectImage { src: string; alt: string; width: number; height: number; caption: string }
+export interface Project {
+  name: string;
+  year: string;
+  short: string;
+  desc: string;
+  tags: string[];
+  href?: string;
+  image?: ProjectImage;
+}
 
 export const PROJECTS: Project[] = [
+  {
+    name: 'Decision Model Experiment',
+    year: '2026',
+    short: 'An open decision model, a cheap fit and a fine-tuned encoder, tested on four tasks',
+    desc: 'A small reproducible test of Strands Decider 2B on four public classification tasks: as shipped, after a cheap calibration fit on a few hundred labels, and against a fine-tuned DistilRoBERTa. Reports accuracy, calibration error and coverage with confidence intervals. Two of the four tasks were in the model\'s own training list, so the two unseen tasks carry the zero-shot result. It is the experiment behind a three-part blog series.',
+    tags: ['Python', 'PyTorch', 'Transformers', 'scikit-learn', 'Strands Decider'],
+    href: 'https://github.com/adityam789/decision-models-experiment',
+  },
+  {
+    name: 'Face Sorter & Finder',
+    year: '2026',
+    short: 'Sort photos by person and search them in plain language, fully offline',
+    desc: 'Groups a messy photo folder into one folder per person, or finds every photo of one person, using InsightFace face embeddings and clustering on CPU. A photo index answers plain-language queries: dates, places and names become exact filters and the rest is ranked with SigLIP 2. Everything runs locally, with a CLI and a local web app.',
+    tags: ['Python', 'InsightFace', 'SigLIP 2', 'ONNX Runtime', 'scikit-learn', 'SQLite', 'Gradio'],
+    href: 'https://github.com/adityam789/image_face_detection',
+    image: {
+      src: '/projects/face-sorter-finder.png',
+      alt: 'Diagram: a mixed photo folder passes through load, face detection, face embeddings and clustering, then is copied into one folder per person. A photo with two people goes into two folders. A second strip shows a photo search query split into exact filters and ranked visual text.',
+      width: 1600,
+      height: 900,
+      caption: 'Illustration of the pipeline, made for this page. Not a screenshot.',
+    },
+  },
+  {
+    name: 'ai-avatar-agent',
+    year: '2026',
+    short: 'Turns a topic into a vertical talking-head video: research, script, voice, avatar',
+    desc: 'Researches a topic (RSS, web search, optionally Reddit), has an LLM write a short narration, synthesises speech with Coqui XTTS v2, animates a still image with SadTalker and composites a 1080x1920 video with ffmpeg. Each stage writes one file per run, so runs are resumable and inspectable. An offline mode swaps every external service for fakes. A feature-complete prototype, now archived.',
+    tags: ['Python', 'OpenRouter', 'Coqui XTTS v2', 'SadTalker', 'ffmpeg', 'FastAPI'],
+    href: 'https://github.com/adityam789/ai-avatar-agent',
+    image: {
+      src: '/projects/ai-avatar-agent-demo.gif',
+      alt: 'Looping demo: a blocky cartoon placeholder avatar with a green shirt on a blue background, stacked above a moving purple and teal gradient.',
+      width: 270,
+      height: 480,
+      caption: 'Output of the offline demo mode: a placeholder avatar, a silent fake voice and a canned script. Not a real model render.',
+    },
+  },
   {
     name: 'Market Lens',
     year: '2025',

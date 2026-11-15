@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import Reveal from '../../components/Reveal';
 import CaseCard from '../../components/CaseCard';
@@ -83,6 +84,20 @@ export default function WorkPage() {
                 <div className="project-tags" style={{ marginTop: '0.75rem', justifyContent: 'flex-start' }}>
                   {p.tags.map(t => <span className="tag" key={t}>{t}</span>)}
                 </div>
+                {p.image && (
+                  <figure className={styles.projectFigure}>
+                    <Image
+                      src={p.image.src}
+                      alt={p.image.alt}
+                      width={p.image.width}
+                      height={p.image.height}
+                      sizes="(max-width: 720px) 100vw, 640px"
+                      unoptimized={p.image.src.endsWith('.gif')}
+                      className={p.image.height > p.image.width ? `${styles.projectImage} ${styles.projectImageTall}` : styles.projectImage}
+                    />
+                    <figcaption className={styles.projectCaption}>{p.image.caption}</figcaption>
+                  </figure>
+                )}
               </div>
               {p.href && <span className="project-arrow">↗</span>}
             </>

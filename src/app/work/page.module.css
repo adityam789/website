@@ -43,3 +43,27 @@
     line-height: 1.7;
     margin-top: 4px;
 }
+.projectFigure {
+    margin: 1rem 0 0;
+}
+
+.projectImage {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.projectImageTall {
+    width: auto;
+    max-width: 100%;
+    max-height: 360px;
+}
+
+.projectCaption {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    line-height: 1.5;
+    margin-top: 6px;
+}
