@@ -110,6 +110,14 @@ export interface Project { name: string; year: string; short: string; desc: stri
 
 export const PROJECTS: Project[] = [
   {
+    name: 'Face Sorter & Finder',
+    year: '2026',
+    short: 'Sort photos by person and search them in plain language, fully offline',
+    desc: 'Groups a messy photo folder into one folder per person, or finds every photo of one person, using InsightFace face embeddings and clustering on CPU. A photo index answers plain-language queries: dates, places and names become exact filters and the rest is ranked with SigLIP 2. Everything runs locally, with a CLI and a local web app.',
+    tags: ['Python', 'InsightFace', 'SigLIP 2', 'ONNX Runtime', 'scikit-learn', 'SQLite', 'Gradio'],
+    href: 'https://github.com/adityam789/image_face_detection',
+  },
+  {
     name: 'Market Lens',
     year: '2025',
     short: 'Multi-source financial intelligence with LLM-powered sentiment analysis',
