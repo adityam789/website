@@ -3,7 +3,7 @@ title: "Where Decision Models Earn Their Place"
 excerpt: "Part 3 of 3 on decision models. Routing, triage, rating, guardrails, many small questions and now images. Six places they fit, and the cases where a general LLM is still the right call."
 date: "2026-11-14"
 tag: "Tech"
-draft: true
+draft: false
 ---
 
 ## A simple test

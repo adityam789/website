@@ -5,7 +5,7 @@ date: "2026-11-14"
 tag: "Tech"
 cover: "/blog/decision-models-2-zero-shot-is-a-demo/cover.png"
 coverAlt: "A glass balance scale with a glowing amber sphere in one pan and a stack of checked tiles in the other, in front of a dial whose needle sits just off centre."
-draft: true
+draft: false
 ---
 
 ## The pitch, and the question it skips
