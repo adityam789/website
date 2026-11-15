@@ -23,8 +23,8 @@ Edit `EXPERIENCE` in `app/work/page.tsx` (bullets, tags, period); if headline st
 `app/about/page.tsx` quick-facts/bio, and `../content.md`. Replace `public/resume.pdf` / `public/cv.pdf` (source `../aditya_maheshwari_cv_2_page.tex`).
 
 ## 3. Add a project
-Add to `PROJECTS` in `app/work/page.tsx` (name, year, desc, tags, href). If it should be featured, add to the short `PROJECTS` in `app/page.tsx` (home shows 3).
-`href: '#'` means private/no link. Better long-term: extract to `src/data/projects.ts` and import in both pages (removes duplication).
+Add to `PROJECTS` in `src/data/work.ts` (name, year, short, desc, tags, href). Both `/work` and the home page render the whole list, newest first.
+`href` omitted means private/no link. An optional `image` ({ src, alt, width, height, caption }) shows a figure under the tags on `/work` only: put the file in `public/projects/`, write real alt text, and caption anything that is not a screenshot (for example "Illustration" or "offline demo"). Never use photos of real people.
 
 ## 4. Add a blog post (blog system already built)
 1. Create `src/content/blog/<slug>.md` with frontmatter `title` (use `Main: Subtitle` to get the split headline), `excerpt`, `date` (YYYY-MM-DD), `tag` (Tech|Life), `cover`, `coverAlt` (alt text for the cover; falls back to the title), optional `draft: true`.
