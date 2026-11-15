@@ -1,12 +1,13 @@
 export const SKILLS = [
-  { group: 'Languages', items: ['Java', 'Python', 'TypeScript', 'JavaScript', 'C/C++', 'R', 'SQL'] },
+  { group: 'Agentic AI', items: ['Multi-agent systems', 'LangGraph', 'LangSmith', 'CrewAI', 'LangChain', 'Langflow', 'Advanced RAG'] },
+  { group: 'ML & evaluation', items: ['LLM and agent evaluation', 'Fine-tuning', 'PyTorch', 'TensorFlow', 'LIME', 'SHAP'] },
+  { group: 'Languages', items: ['Java', 'Python', 'TypeScript', 'JavaScript', 'SQL', 'C/C++', 'R'] },
   { group: 'Backend', items: ['Spring Boot', 'Node.js', 'Flask', 'Express'] },
-  { group: 'Cloud (GCP)', items: ['Cloud Run', 'Spanner', 'GKE', 'Pub/Sub', 'BigQuery'] },
+  { group: 'Data', items: ['Spanner', 'Oracle SQL', 'PostgreSQL', 'MongoDB', 'Redis', 'Pulsar', 'Striim CDC', 'Celonis'] },
+  { group: 'Cloud (GCP)', items: ['Cloud Run', 'GKE', 'Pub/Sub', 'Cloud Tasks', 'Workflows', 'BigQuery'] },
   { group: 'Cloud (AWS)', items: ['EKS', 'Fargate', 'DynamoDB', 'S3', 'CloudWatch', 'Cognito'] },
-  { group: 'AI / ML', items: ['LangChain', 'Crew AI', 'Langflow', 'TensorFlow', 'PyTorch', 'LIME', 'SHAP'] },
-  { group: 'Data', items: ['Oracle SQL', 'PostgreSQL', 'MongoDB', 'Celonis'] },
   { group: 'Frontend', items: ['React', 'Next.js', 'Angular'] },
-  { group: 'Tooling', items: ['Docker', 'Git', 'GitHub Actions', 'CI/CD'] },
+  { group: 'Infra & tooling', items: ['Istio', 'Harness CI/CD', 'Docker', 'Datadog', 'Git', 'GitHub Actions'] },
 ];
 
 export const EDUCATION = {

@@ -33,8 +33,9 @@ export default function AboutPage() {
           <div className={styles.bioBlock}>
             <div className={styles.bioText}>
               <p>
-                I’m Aditya, a software engineer based in San Jose, CA. I work at PayPal, where I build systems that
-                handle money, protect people, and sometimes auto-file regulatory reports to the government. Before
+                I’m Aditya, a software engineer based in San Jose, CA. I work at PayPal, where I ship LLM agents
+                for case work and the distributed systems behind them: systems that handle money, protect people,
+                and help file regulatory reports. Before
                 that, I studied Computer Science and Mathematics at UMass Amherst.
               </p>
               <p>

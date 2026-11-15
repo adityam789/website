@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Reveal from '../components/Reveal';
 import CaseCard from '../components/CaseCard';
+import ResumeDownloads from '../components/ResumeDownloads';
 import { formatDate, getAllPosts } from '../lib/blog';
 import { site, PROOF, LIFE } from '../data/site';
 import { CASE_STUDIES, PROJECTS } from '../data/work';
@@ -24,8 +25,8 @@ export default function HomePage() {
                 Aditya <br /><em>Maheshwari</em><span className={styles.nameDot}>.</span>
               </h1>
               <p className={styles.lead}>
-                I build the backend systems that <strong>move money safely</strong>: fraud recovery, regulatory
-                reporting, and the platform underneath them. Lately I also write about{' '}
+                I ship <strong>production LLM agents</strong> and the <strong>distributed backends</strong> behind
+                them: case automation, fraud recovery, and the platform underneath. I also write about{' '}
                 <strong>engineering with AI agents</strong>.
               </p>
               <div className={styles.cta}>
@@ -33,8 +34,7 @@ export default function HomePage() {
                 <Link href="/blog" className="btn-secondary">read the writing</Link>
               </div>
               <p className={styles.downloads}>
-                <a href="/resume.pdf" download>resume ↓</a>
-                <a href="/cv.pdf" download>cv ↓</a>
+                <ResumeDownloads />
                 <span className="available-badge"><span className="pulse-dot" />open to opportunities</span>
               </p>
             </div>

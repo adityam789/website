@@ -8,7 +8,7 @@ import ScrollProgress from '../components/ScrollProgress';
 import PointerGlow from '../components/PointerGlow';
 import CommandPalette, { type PaletteItem } from '../components/CommandPalette';
 import { getAllPosts } from '../lib/blog';
-import { site, NAV_LINKS } from '../data/site';
+import { site, NAV_LINKS, RESUME_TRACKS } from '../data/site';
 import { CASE_STUDIES } from '../data/work';
 
 const instrumentSerif = Instrument_Serif({
@@ -60,8 +60,10 @@ function paletteItems(): PaletteItem[] {
     ...getAllPosts().map(p => ({ label: p.title, group: 'Writing', href: `/blog/${p.slug}` })),
     ...CASE_STUDIES.map(c => ({ label: c.title, group: 'Case study', href: `/work#${c.slug}` })),
     { label: 'Toggle dark mode', group: 'Action', action: 'theme' as const },
-    { label: 'Download resume', group: 'Action', href: '/resume.pdf' },
-    { label: 'Download CV', group: 'Action', href: '/cv.pdf' },
+    ...RESUME_TRACKS.flatMap((t, i) => [
+      { label: i === 0 ? 'Download resume' : `Download resume (${t.label} focus)`, group: 'Action', href: t.resume },
+      { label: i === 0 ? 'Download CV' : `Download CV (${t.label} focus)`, group: 'Action', href: t.cv },
+    ]),
     { label: 'Email me', group: 'Action', href: `mailto:${site.email}` },
     { label: 'GitHub', group: 'Elsewhere', href: site.github.url },
     { label: 'LinkedIn', group: 'Elsewhere', href: site.linkedin.url },
