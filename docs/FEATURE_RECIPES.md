@@ -19,8 +19,11 @@ for the current Next 16 API before using routing/data/metadata features, and run
 3. Add `export const metadata`.
 
 ## 2. Update resume/CV content
-Edit `EXPERIENCE` in `app/work/page.tsx` (bullets, tags, period); if headline stats change update `app/page.tsx` stat cards and terminal,
-`app/about/page.tsx` quick-facts/bio, and `../content.md`. Replace `public/resume.pdf` / `public/cv.pdf` (source `../aditya_maheshwari_cv_2_page.tex`).
+Edit `EXPERIENCE` and `CASE_STUDIES` in `src/data/work.ts` (bullets, tags, period); if headline stats change update `PROOF` in `src/data/site.ts`,
+`SKILLS` in `src/data/about.ts`, the hero lead in `app/page.tsx` and the bio in `app/about/page.tsx`.
+PDFs: `public/resume.pdf` / `public/cv.pdf` are the default (hybrid) one-page resume and two-page CV. Other versions live in `public/resumes/` and are
+listed in `RESUME_TRACKS` in `src/data/site.ts`; the hero switch (`components/ResumeDownloads.tsx`) and the command menu both read that list.
+Sources are the PDFs in `../18085/` (`Aditya_{Hybrid,AI,SWE}_{1page,2page}.pdf`).
 
 ## 3. Add a project
 Add to `PROJECTS` in `src/data/work.ts` (name, year, short, desc, tags, href). Both `/work` and the home page render the whole list, newest first.

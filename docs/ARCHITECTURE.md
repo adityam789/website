@@ -49,7 +49,7 @@ src/lib/blog.ts       getAllPosts/getPost/formatDate
 public/blog/<slug>/   post images (add known sizes to IMAGE_SIZES in PostBody.tsx)
 src/lib/dmp/          config.ts (navigationMode), tokens.ts
 src/styles/dmp/       GlobalDmpStyles.ts
-public/               resume.pdf, cv.pdf (linked from hero), default create-next-app svgs (unused)
+public/               resume.pdf, cv.pdf (hybrid, the default), resumes/ (AI and backend versions; see RESUME_TRACKS), default create-next-app svgs (unused)
 .env.local            NEXT_PUBLIC_PHONE_NUMBER, NEXT_PUBLIC_INSTAGRAM_URL (gitignored; used by DMP Act 2 / ConfettiButton)
 ```
 Imports use **relative paths** throughout, although `@/*` → `src/*` alias is configured.

@@ -26,10 +26,29 @@ export const PAYPAL_YEARS = Math.floor((Date.now() - PAYPAL_START) / (365.25 * 2
 export const CURRENT_YEAR = new Date().getFullYear();
 
 export const PROOF = [
-  { value: '$160M', label: 'recovered from fraudulent accounts each year' },
-  { value: '30K+', label: 'investigator hours saved annually' },
-  { value: '−55%', label: 'latency and storage on a 25K-subpoena portal' },
+  { value: '80%', label: 'of 61K+ issues auto-closed by LLM agents' },
+  { value: '99.99%', label: 'availability at 3.6M+ requests a day' },
+  { value: '$160M', label: 'recovered for defrauded accounts each year' },
   { value: `${PAYPAL_YEARS}+`, label: 'years shipping at PayPal' },
+];
+
+/** Resume and CV downloads. The first track is the default; `/resume.pdf` and `/cv.pdf` are the hybrid files. */
+export const RESUME_TRACKS = [
+  { key: 'hybrid', label: 'Hybrid', hint: 'AI agents and the backends behind them', resume: '/resume.pdf', cv: '/cv.pdf' },
+  {
+    key: 'ai',
+    label: 'AI',
+    hint: 'LLM agents, evaluation and fine-tuning',
+    resume: '/resumes/aditya-maheshwari-ai-resume.pdf',
+    cv: '/resumes/aditya-maheshwari-ai-cv.pdf',
+  },
+  {
+    key: 'backend',
+    label: 'Backend',
+    hint: 'distributed systems on GCP',
+    resume: '/resumes/aditya-maheshwari-backend-resume.pdf',
+    cv: '/resumes/aditya-maheshwari-backend-cv.pdf',
+  },
 ];
 
 export const PRINCIPLES = [

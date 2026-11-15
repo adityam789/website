@@ -1,0 +1,63 @@
+.root {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.25rem;
+}
+
+.tracks {
+  display: inline-flex;
+  padding: 2px;
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius-full, 999px);
+  background: var(--surface-subtle);
+}
+
+/* Without JavaScript the links stay on the default version, so hide the switch. */
+:global(html:not(.js)) .tracks,
+:global(html:not(.js)) .hint {
+  display: none;
+}
+
+.track {
+  position: relative;
+  cursor: pointer;
+}
+
+.input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.pill {
+  display: block;
+  padding: 3px 11px;
+  border-radius: var(--radius-full, 999px);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-tertiary);
+  transition: background 0.15s, color 0.15s;
+}
+
+.track:hover .pill {
+  color: var(--text-primary);
+}
+
+.input:checked + .pill {
+  background: var(--surface);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.input:focus-visible + .pill {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
