@@ -3,6 +3,8 @@ title: "Where Decision Models Earn Their Place"
 excerpt: "Part 3 of 3 on decision models. Routing, triage, rating, guardrails, many small questions and now images. Six places they fit, and the cases where a general LLM is still the right call."
 date: "2026-11-14"
 tag: "Tech"
+cover: "/blog/decision-models-3-where-they-earn-their-place/cover.png"
+coverAlt: "A glowing amber cube where one long teal lane splits into six lanes, each ending on a platform with an icon: a signpost, an envelope, a star, a shield, a keypad and a camera."
 draft: false
 ---
 
