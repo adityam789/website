@@ -19,9 +19,9 @@ I'm late to this topic. The category is about two months old and it moves weekly
 
 A decision model takes two things: some input, usually called the state, and one or more typed questions about it. It answers each question with a probability.
 
-The shape was set by Jev, which [TypeSafe AI launched on 15 September 2026](https://hackernoon.com/20-best-open-source-ai-decision-models-you-can-run-locally-in-2026) under the name "System One model". The name borrows from Daniel Kahneman: [System 1 is the fast, intuitive judgment](https://www.dsebastien.net/decision-models-dms/), and a general LLM is the slow, deliberate System 2.
+The shape was set by Jev, which [TypeSafe AI launched on 15 September 2026](https://typesafe.ai/blog/introducing-system-one-models-and-jev) under the name "System One model". The name is usually read as a nod to [Daniel Kahneman's fast, intuitive System 1](https://www.dsebastien.net/decision-models-dms/), which would make a general LLM the slow, deliberate System 2. Simon Willison argues that ["decision models" is a better name](https://simonwillison.net/2026/Sep/21/jev/), and that is the one I use here.
 
-The API has three question types:
+The API launched with three question types:
 
 | Type | You ask | You get back |
 | --- | --- | --- |
@@ -29,7 +29,9 @@ The API has three question types:
 | Noul | Is this statement true? | One number: the probability of yes |
 | Score | Rate this on a scale | A position on the scale, with confidence |
 
-A choice can have [up to 255 options on most models](https://hackernoon.com/20-best-open-source-ai-decision-models-you-can-run-locally-in-2026). And because the questions don't depend on each other, a model can answer many of them [in a single pass over the same input](https://vizuara.substack.com/p/jev-what-a-model-built-for-decisions).
+Jev has since added a fourth, box, which returns a bounding box. [TypeSafe's docs](https://docs.typesafe.ai/) list all four.
+
+A choice can have [up to 255 options](https://docs.typesafe.ai/primitives/choice) on Jev, and Google's API has the same limit. And because the questions don't depend on each other, [any mix of them can go in a single request](https://docs.typesafe.ai/) over the same input.
 
 ## Two months, start to finish
 
@@ -37,13 +39,14 @@ The speed of this is worth seeing in one place.
 
 | When (2026) | What happened |
 | --- | --- |
-| 15 September | TypeSafe AI launches Jev and names the category |
-| Within weeks | Open models appear, mostly built on Qwen and Gemma, some serving a Jev-compatible API |
-| 1 October | Amazon's Strands team publishes [Strands Decider 2B](https://github.com/strands-labs/strands-decider), with open weights, data and training scripts |
-| Mid-October | [OpenAI, Microsoft, Perplexity, Cloudflare and Liquid](https://admix.software/blog/decision-model-apis-go-commercial) ship commercial decision APIs on the same day |
-| 10 and 11 November | Hugging Face adds a decision-model interface, and Google launches the [Gemini Decisions API](https://www.eesel.ai/blog/gemini-decisions-api), which takes images, audio, video and PDFs as well as text |
+| 15 September | [TypeSafe AI launches Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev) and names the category |
+| 1 October | Cloudflare releases [Clef](https://blog.cloudflare.com/clef-decision-models/), two open-weight decision models built on Qwen |
+| By 6 October | OpenAI has a [Decisions API](https://developers.openai.com/api/docs/guides/decisions), announced at its DevDay. Simon Willison ships [a plugin for it on 6 October](https://simonwillison.net/2026/Oct/6/llm-openai-decisions/) |
+| October | More open models follow on Qwen and Gemma bodies, among them [Strands Decider 2B](https://github.com/strands-labs/strands-decider), with open weights and training code, and the models from the paper [Releasing the Inner Jev](https://arxiv.org/abs/2610.17205) |
+| 10 November | Hugging Face publishes [a shared decision-model interface](https://huggingface.co/blog/decision) for its libraries |
+| 11 November | Google launches the [Gemini Decisions API](https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/), which takes images, audio, video and PDFs as well as text |
 
-One startup's idea became a product line at every major vendor in about eight weeks.
+One startup's idea became a product line at OpenAI, Google and Cloudflare in about eight weeks.
 
 ## What's inside
 
@@ -58,11 +61,11 @@ A decision model keeps the stack and changes the last step. From what has been p
 
 | Approach | Example | What changes |
 | --- | --- | --- |
-| Read the answer off a normal LLM | Open reproductions that [sum the log-probabilities of each option's tokens](https://pub.towardsai.net/jev-explained-calibrated-decision-models-a89d88c845ab) | Nothing in the weights. Only how the output is read |
-| Skip the loop | Cloudflare's Clef, described as [a prefill-only pass that scores the valid choices in parallel](https://www.eesel.ai/blog/decision-models) | No token-by-token decoding |
-| Replace the head | Strands Decider 2B: a Qwen body with the [language head removed and a pointer head of about a million parameters](https://github.com/strands-labs/strands-decider) added | The model can no longer generate text at all |
+| Use an ordinary LLM as it is | An untuned Gemma, which one paper reports [within half a point of Jev on its benchmark](https://arxiv.org/abs/2610.17205) | Nothing in the weights. Only how the output is read |
+| Skip the loop | Cloudflare's Clef, which [uses Qwen for a prefill-only pass, then scores the valid schema choices in parallel](https://blog.cloudflare.com/clef-decision-models/) | No token-by-token decoding |
+| Replace the head | Strands Decider 2B: a Qwen body with the [language head discarded and a pointer head of about a million parameters](https://github.com/strands-labs/strands-decider) in its place | The model can no longer generate text at all |
 
-So "is it a decoder?" has a more careful answer than I first gave people. Several of these are decoder LLMs underneath. Strands starts from one and removes its ability to write. At least one open model, Laya, is [described as encoder-based](https://vizuara.substack.com/p/jev-what-a-model-built-for-decisions). And TypeSafe [has not disclosed Jev's architecture](https://pub.towardsai.net/jev-explained-calibrated-decision-models-a89d88c845ab), so anyone telling you exactly what is inside it is guessing.
+So "is it a decoder?" has a more careful answer than I first gave people. Several of these are decoder LLMs underneath. Strands starts from one and removes its ability to write. At least one open model, Laya, is not a decoder at all: its model card describes [a bidirectional encoder, ModernBERT, with a decision head on top](https://huggingface.co/convaiinnovations/laya). And TypeSafe has not said what Jev is. Its launch post mentions only [a new model architecture with a parallel sampler](https://typesafe.ai/blog/introducing-system-one-models-and-jev). The most detailed outside reconstruction I found calls itself [quite speculative](https://archerhume.com/posts/jevs-architecture-unmasked/), so anyone telling you exactly what is inside it is guessing.
 
 What they share is the body: attention, the same kind of layers, the same pretraining on text. That is why they understand a messy support ticket without being trained on your tickets.
 
@@ -70,7 +73,7 @@ What they share is the body: attention, the same kind of layers, the same pretra
 
 ## Why this is fast and cheap
 
-No loop means no output tokens to generate, and the pricing shows it. As reported at launch, OpenAI's decision API costs [$0.10 per million input tokens with no charge for output](https://admix.software/blog/decision-model-apis-go-commercial), and Google's is [priced the same way](https://www.eesel.ai/blog/gemini-decisions-api). A September research paper recorded Jev at [$0.042 per million input tokens](https://arxiv.org/pdf/2609.24052), output free.
+No loop means no output tokens to generate, and the pricing shows it. OpenAI's Decisions API costs [$0.10 per million input tokens with no charge for output](https://developers.openai.com/api/docs/guides/decisions), and Google's is [priced the same way](https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/). TypeSafe lists Jev at [$0.042 per million input tokens](https://docs.typesafe.ai/models), output free.
 
 The other saving is that there is nothing to parse. You don't ask for JSON and hope. The answer space is fixed before the model runs.
 
@@ -82,12 +85,13 @@ The other saving is that there is nothing to parse. You don't ask for JSON and h
 
 ## Is it just a small language model, then?
 
-Not quite. A small language model still writes text. A decision model returns a typed answer in one pass, which is [why it is faster for yes/no and routing work and why it can't hold a conversation](https://admix.software/blog/decision-model-apis-go-commercial).
+Not quite. A small language model still writes text. A decision model returns a typed answer in one pass, which is why it is faster for yes/no and routing work and why it can't hold a conversation.
 
 It also isn't a classic classifier. A fine-tuned BERT is excellent at the one task you trained it for and useless at the next. A decision model takes a new question in plain English with no training. That zero-shot ability is the real novelty here. It is also the thing people lean on too hard, which is where part two picks up.
 
 ### Sources
 
-- The category: [dsebastien, Decision Models](https://www.dsebastien.net/decision-models-dms/) · [HackerNoon, open decision models](https://hackernoon.com/20-best-open-source-ai-decision-models-you-can-run-locally-in-2026) · [Admix, five vendors in one day](https://admix.software/blog/decision-model-apis-go-commercial) · [eesel, Gemini Decisions API](https://www.eesel.ai/blog/gemini-decisions-api)
-- Architecture: [Strands Decider repository](https://github.com/strands-labs/strands-decider) · [eesel, Decision models explained](https://www.eesel.ai/blog/decision-models) · [Towards AI, Jev explained](https://pub.towardsai.net/jev-explained-calibrated-decision-models-a89d88c845ab) · [Vizuara, Jev explainer](https://vizuara.substack.com/p/jev-what-a-model-built-for-decisions)
-- Pricing reference: [arXiv 2609.24052](https://arxiv.org/pdf/2609.24052)
+- The category: [TypeSafe, Introducing System One Models and Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev) · [TypeSafe docs](https://docs.typesafe.ai/) · [Simon Willison on Jev](https://simonwillison.net/2026/Sep/21/jev/) · [dsebastien, Decision Models](https://www.dsebastien.net/decision-models-dms/)
+- The timeline: [OpenAI Decisions API guide](https://developers.openai.com/api/docs/guides/decisions) · [Simon Willison, llm-openai-decisions](https://simonwillison.net/2026/Oct/6/llm-openai-decisions/) · [Cloudflare, Introducing Clef](https://blog.cloudflare.com/clef-decision-models/) · [Hugging Face, Decision Models in Hugging Face](https://huggingface.co/blog/decision) · [Google, Gemini Decisions API](https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/)
+- Architecture: [Strands Decider repository](https://github.com/strands-labs/strands-decider) · [Releasing the Inner Jev, arXiv 2610.17205](https://arxiv.org/abs/2610.17205) · [Laya model card](https://huggingface.co/convaiinnovations/laya) · [Archer Hume, Jev's architecture unmasked](https://archerhume.com/posts/jevs-architecture-unmasked/)
+- Pricing: [TypeSafe models and pricing](https://docs.typesafe.ai/models)
