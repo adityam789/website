@@ -13,6 +13,7 @@ import AvailabilityGap from './diagrams/AvailabilityGap';
 import DecisionHead from './diagrams/DecisionHead';
 import JudgeCost from './charts/JudgeCost';
 import MissionTime from './charts/MissionTime';
+import DecisionFit from './charts/DecisionFit';
 import styles from './PostBody.module.css';
 
 /** Known image sizes (px) so next/image can reserve space without layout shift. */
@@ -118,6 +119,7 @@ const components: Components = {
     if (className === 'language-diagram-decision-head') return <DecisionHead />;
     if (className === 'language-chart-judge-cost') return <JudgeCost />;
     if (className === 'language-chart-mission-time') return <MissionTime />;
+    if (className === 'language-chart-decision-fit') return <DecisionFit />;
     if (className) {
       return (
         <pre className={styles.codeBlock}>
