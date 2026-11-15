@@ -9,6 +9,16 @@ Only `website/` is a git repo. Sibling files in the parent dir are the *original
 `../design.md` (design system v1), `../content.md` (all copy/data), `../personal_website_mockup.html`,
 `../aditya_maheshwari_cv_2_page.tex` (CV source), PDFs. Treat them as source-of-truth for intent; the code has drifted (see "Known drift").
 
+> **Updated 2026-11-14 (redesign).** Where this file disagrees with the list below, the list wins:
+> - Content lives in `src/data/` (`site.ts` identity/links/nav/proof, `work.ts` case studies/experience/teaching/projects, `about.ts` skills/education/awards). Pages only render it. Nothing is duplicated.
+> - All main pages are server components. Client pieces: `Nav`, `Footer`, `ThemeProvider` (useSyncExternalStore over `html.dark`), `CommandPalette` (⌘K, opened via the `cmdk:open` window event), `blog/BlogList` (tag filters), `ContactForm` (mailto compose, no backend), `Reveal`.
+> - `app/layout.tsx` has a `<head>` boot script (sets `html.dark` and `html.js` before paint; reveals are only hidden under `.js`). `app/template.tsx` gives each navigation one 280ms fade. All motion is disabled under `prefers-reduced-motion`.
+> - SEO files: `app/sitemap.ts`, `robots.ts`, `feed.xml/route.ts` (RSS), `icon.tsx`, `opengraph-image.tsx`, JSON-LD Person in layout.
+> - Fonts load only through `next/font` (`--font-serif-next`, `--font-mono-next`, mapped to `--font-display` / `--font-mono` in globals.css).
+> - Use `--accent-text` (not `--accent`) for small accent-colored text; it passes contrast. New code uses 2-space indentation.
+> - Home lists posts from `getAllPosts()`; "coming soon" placeholders were removed. `/work` case studies are cards (`CaseCard`); add detail pages when trade-offs are written up.
+> - `npm run lint` still fails on pre-existing `/dmp` files only.
+
 ## Commands
 `npm run dev` · `npm run build` · `npm run lint` (no test suite exists). Deploy target: Vercel.
 

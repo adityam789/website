@@ -121,7 +121,7 @@ Cheap leads, strong consults:
 
 Use in a post with a code fence: three backticks followed by `diagram-egm`, `diagram-blueprint` or `diagram-convergence`, then a closing fence.
 
-Published as `src/content/blog/every-serious-agent-harness-makes-the-same-four-moves.md`. Prompts for the cover, swarm illustration, checklist card and both charts are in `image-prompts-remaining.md`. The cover prompt is also here (16:9):
+Published as `src/content/blog/every-serious-agent-harness-makes-the-same-four-moves.md`. The cover prompt is also here (16:9):
 ```text
 Editorial illustration for a software engineering blog post titled "Every serious agent harness makes the same four moves". A small glowing amber cube floats in the center of four tall translucent teal walls arranged as a square courtyard, seen from a slightly elevated isometric angle. Each wall carries one minimal glyph: a blank page, a balance scale, a gear, a stack of coins. Deep navy background with faint grid lines, calm and minimalist, lots of negative space. No text, no people, no robots. 16:9.
 ```
