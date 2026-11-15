@@ -1,12 +1,13 @@
 export const SKILLS = [
-  { group: 'Agentic AI', items: ['Multi-agent systems', 'LangGraph', 'LangSmith', 'CrewAI', 'Advanced RAG'] },
-  { group: 'ML & evaluation', items: ['LLM and agent evaluation', 'Fine-tuning', 'PyTorch'] },
-  { group: 'Languages', items: ['Java', 'Python', 'TypeScript', 'JavaScript', 'SQL', 'C/C++'] },
-  { group: 'Backend', items: ['Spring Boot', 'Node.js', 'Flask', 'React'] },
-  { group: 'Data', items: ['Spanner', 'Oracle', 'MongoDB', 'Redis', 'Pulsar', 'Striim CDC'] },
+  { group: 'Agentic AI', items: ['Multi-agent systems', 'LangGraph', 'LangSmith', 'CrewAI', 'LangChain', 'Langflow', 'Advanced RAG'] },
+  { group: 'ML & evaluation', items: ['LLM and agent evaluation', 'Fine-tuning', 'PyTorch', 'TensorFlow', 'LIME', 'SHAP'] },
+  { group: 'Languages', items: ['Java', 'Python', 'TypeScript', 'JavaScript', 'SQL', 'C/C++', 'R'] },
+  { group: 'Backend', items: ['Spring Boot', 'Node.js', 'Flask', 'Express'] },
+  { group: 'Data', items: ['Spanner', 'Oracle SQL', 'PostgreSQL', 'MongoDB', 'Redis', 'Pulsar', 'Striim CDC', 'Celonis'] },
   { group: 'Cloud (GCP)', items: ['Cloud Run', 'GKE', 'Pub/Sub', 'Cloud Tasks', 'Workflows', 'BigQuery'] },
-  { group: 'Cloud (AWS)', items: ['EKS', 'DynamoDB'] },
-  { group: 'Infra', items: ['Istio', 'Harness CI/CD', 'Docker', 'Datadog'] },
+  { group: 'Cloud (AWS)', items: ['EKS', 'Fargate', 'DynamoDB', 'S3', 'CloudWatch', 'Cognito'] },
+  { group: 'Frontend', items: ['React', 'Next.js', 'Angular'] },
+  { group: 'Infra & tooling', items: ['Istio', 'Harness CI/CD', 'Docker', 'Datadog', 'Git', 'GitHub Actions'] },
 ];
 
 export const EDUCATION = {

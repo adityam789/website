@@ -38,10 +38,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     built: [
       'As a core engineer, migrated 3M+ cases in 2 days at 4K records a second over CDC, with zero downtime.',
+      'Designed the cell-based multi-tenant architecture and presented it to SVP and CTO leadership.',
       'Grew the platform from SVP/CTO-reviewed AWS and GCP proofs of concept to 12 GKE and Cloud Run services with 80ms p95 reads.',
       'Primary on-call every other week.',
     ],
-    stack: ['GCP', 'Spanner', 'GKE', 'Cloud Run', 'Striim CDC'],
+    stack: ['GCP', 'Spanner', 'GKE', 'Cloud Run', 'Pub/Sub', 'Striim CDC'],
     featured: true,
   },
   {
@@ -54,9 +55,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     built: [
       'Built the fraud refund and currency-sweep system.',
-      'Bundled 600K accounts ($290M in transactions) for automated multi-jurisdiction filings.',
+      'Built an account-bundling tool that consolidates 1M+ transaction records: 600K accounts ($290M in transactions) bundled for automated multi-jurisdiction filings.',
     ],
-    stack: ['Java', 'Spring Boot', 'Oracle'],
+    stack: ['Java', 'Spring Boot', 'Oracle SQL'],
     featured: true,
   },
   {
@@ -111,15 +112,18 @@ export const CASE_STUDIES: CaseStudy[] = [
     summary: 'Reports that used to need a manual investigation are now prepared automatically.',
     metrics: [
       { value: '30K+', label: 'investigator hours saved per year' },
-      { value: '10K+', label: 'cases a year with no manual investigation' },
+      { value: '10K+', label: 'manual investigations removed per year' },
     ],
-    built: ['Led the automation across five anti-money-laundering rules, including an LLM narrative generator.'],
-    stack: ['Java', 'Spring Boot', 'LLM'],
+    built: [
+      'Led the automation of report filing to regulators across five anti-money-laundering rules.',
+      'Included an LLM generator for the compliance narrative.',
+    ],
+    stack: ['Java', 'Spring Boot', 'Oracle SQL', 'LLM'],
   },
   {
     slug: 'law-enforcement-portal',
-    title: 'Re-architecting the law-enforcement portal',
-    summary: 'A rebuild of a portal with 137K+ requests that cut latency and storage by more than half.',
+    title: 'Re-architecting a portal that handles 25K+ subpoenas a year',
+    summary: 'A rebuild of the fulfillment portal that handles 25K+ subpoenas a year (137K+ requests), cutting latency and storage by more than half.',
     metrics: [
       { value: '−55%', label: 'latency and storage, each' },
       { value: '$5M', label: 'saved per year in infra, ops and vendor costs' },
@@ -140,9 +144,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     built: [
       'A voice-activated CrewAI case agent and an Oracle SQL prompt-to-PR generator.',
       'A root-cause assistant over logs, app data and Jira.',
-      'LLM assistants for form pre-fill, team routing and case triage.',
+      'LLM chat assistants for case processing and triage, team routing, form pre-fill and compliance narrative generation.',
     ],
-    stack: ['CrewAI', 'LLM', 'Python'],
+    stack: ['LangChain', 'CrewAI', 'Python'],
   },
 ];
 
@@ -160,13 +164,13 @@ export const TEACHING = [
     course: 'CS 446: Search Engines',
     role: 'Course Assistant · UMass CICS',
     period: 'May 2022 – May 2023',
-    note: 'Moved coding-project grading to Gradescope autograding (Docker, Python) for 160 students. Received Best Teaching Assistant recognition.',
+    note: 'Supported 160 students, designed and graded exams and projects, and moved coding-project grading to Gradescope autograding (Docker, Python). Received Best Teaching Assistant recognition.',
   },
   {
     course: 'CICS 256: Physical Computing',
     role: 'Course Assistant · UMass CICS',
     period: 'Feb 2022 – May 2022',
-    note: 'Created and graded labs for 40 students and mentored final-project teams on Arduino hardware design.',
+    note: 'Arduino-based lab course for 40 students. Created and graded labs, mentored final-project teams on hardware design, and debugged sensors and microcontrollers hands-on.',
   },
 ];
 
@@ -257,7 +261,8 @@ export const EXPERIENCE: Role[] = [
       'Launched an offline evaluation pipeline on Cloud Run: captures every model call with field-level encryption and scores 3K pairs a day with a deterministic check plus 2 LLM judges in LangSmith.',
       'Fine-tuned a case-recommendation model that predicts an investigator’s next action across 462 classes in 14 disciplines: a 200K-case dataset and 3 architectures trained with QLoRA SFT and GRPO/RLAIF on Vertex AI.',
       'Led 3 engineers to architect an L1 case agent, from a 14-node LangGraph state machine to an agent that follows SOP playbooks within guardrails, served via a Spring Boot MCP server; sized to save 2,500 investigator hours a month at 10K cases a month.',
-      'Saved 30K+ investigator hours a year by leading Suspicious Activity Report automation across 5 AML rules, including an LLM narrative generator.',
+      'Saved 30K+ investigator hours a year by leading Suspicious Activity Report automation across 5 AML rules, including an LLM narrative generator, removing 10K+ manual investigations a year.',
+      'Presented the cell-based multi-tenant architecture for the case-management platform (OneSCM) to SVP/CTO leadership.',
       'As a core engineer, migrated 3M+ cases from Oracle to Spanner in 2 days with zero downtime or data diffs; grew the platform to 12 GKE and Cloud Run services serving 3.6M+ requests a day at 99.99% availability and 80ms p95 reads. Primary on-call every other week.',
       'Designed case-lifecycle orchestration on GCP Workflows running 316K+ executions a month at 99.5% success, with a Redis context store that bypasses the 512KB state limit.',
       'Engineered a transactional-outbox event platform (Spanner, Pub/Sub, Pulsar, Cloud Tasks): 99.5% of 1.79M+ events in 3 months delivered without dead-lettering.',
@@ -269,10 +274,10 @@ export const EXPERIENCE: Role[] = [
     role: 'Software Engineer I',
     period: 'Jun 2023 – Apr 2025',
     location: 'San Jose, CA',
-    tags: ['Java', 'Spring Boot', 'Oracle', 'AWS', 'CrewAI'],
+    tags: ['Java', 'Spring Boot', 'Oracle SQL', 'AWS', 'LangChain', 'CrewAI'],
     bullets: [
       'Recovered $160M a year for defrauded accounts and mitigated $10M in litigation risk with a fraud refund and currency-sweep system; bundled 600K accounts ($290M in transactions) for automated multi-jurisdiction filings.',
-      'Cut latency and storage 55% each, and $5M a year in infra, ops and vendor costs, by re-architecting the Law Enforcement portal (137K+ requests), closing 9 security vulnerabilities.',
+      'Cut latency and storage 55% each, and $5M a year in infra, ops and vendor costs, by re-architecting the Law Enforcement Fulfillment Portal (25K+ subpoenas a year, 137K+ requests), closing 9 security vulnerabilities.',
       'Automated NCMEC reporting of 2,000 child-exploitation cases a year to law enforcement.',
       'Built and launched 6 GenAI tools for investigators and engineers: a voice-activated CrewAI case agent, an Oracle SQL prompt-to-PR generator, a root-cause assistant over logs, app data and Jira, and LLM assistants for form pre-fill, team routing and case triage.',
     ],
@@ -283,15 +288,21 @@ export const EXPERIENCE: Role[] = [
     period: 'Jun 2022 – Aug 2022',
     location: 'San Jose, CA',
     tags: ['Java', 'Spring', 'Celonis', 'ETL'],
-    bullets: ['Built a Java/Spring ETL connector that exported 3.5M case-management logs to Celonis for process mining.'],
+    bullets: [
+      'Built a Java/Spring ETL connector that exported 3.5M case-management logs to Celonis for process mining, enabling discovery and operational monitoring.',
+      'Automated daily movement of thousands of new case records via scheduled batch jobs.',
+    ],
   },
   {
     company: 'TestAIng',
     role: 'Machine Learning Intern',
     period: 'May 2021 – Aug 2021',
     location: 'Bangalore, India (Remote)',
-    tags: ['Python', 'Time series', 'LIME', 'SHAP'],
-    bullets: ['Built time-series ML pipelines with concept-drift handling that cut error 7%, plus LIME/SHAP explainability.'],
+    tags: ['Python', 'scikit-learn', 'LIME', 'SHAP'],
+    bullets: [
+      'Built time-series ML pipelines with concept-drift handling that cut error 7% on enterprise datasets.',
+      'Integrated LIME and SHAP explainability methods for non-technical stakeholders.',
+    ],
   },
   {
     company: 'Arevea Inc.',
@@ -299,14 +310,17 @@ export const EXPERIENCE: Role[] = [
     period: 'May 2021 – Aug 2021',
     location: 'Remote',
     tags: ['Angular', 'Node.js', 'SQL'],
-    bullets: ['Built an Angular admin portal and Node.js/SQL REST APIs with QR-code check-in for a virtual events platform.'],
+    bullets: [
+      'Built an Angular admin portal for a virtual event management platform.',
+      'Implemented secure Node.js/SQL REST APIs with QR-code-based event check-in.',
+    ],
   },
   {
     company: 'UMass CIIR',
     role: 'Research Assistant, Prof. James Allan',
     period: 'Mar 2023 – May 2023',
     location: 'Amherst, MA',
-    tags: ['Python', 'LIME', 'SHAP', 'LETOR'],
+    tags: ['Python', 'LIME', 'SHAP', 'NLP', 'LETOR'],
     bullets: ['Applied LIME and SHAP to neural search rankers on LETOR to measure how outputs track interpretable features.'],
   },
   {
@@ -315,6 +329,6 @@ export const EXPERIENCE: Role[] = [
     period: 'Dec 2021 – Jan 2022',
     location: 'Amherst, MA',
     tags: ['R', 'Causal inference'],
-    bullets: ['Evaluated causal inference algorithms on synthetic non-linear observational data in R with a PhD researcher.'],
+    bullets: ['Evaluated causal inference algorithms on synthetic non-linear observational data in R under PhD researcher Pracheta Amaranath.'],
   },
 ];

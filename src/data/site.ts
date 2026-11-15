@@ -6,7 +6,7 @@ export const site = {
   location: 'San Jose, CA',
   url: 'https://mahicodes.com',
   domain: 'mahicodes.com',
-  email: 'adityamahesh@umass.edu',
+  email: 'aditya18mahi@gmail.com',
   github: { handle: 'adityam789', url: 'https://github.com/adityam789' },
   linkedin: { handle: 'aditya-maheshwari-05', url: 'https://linkedin.com/in/aditya-maheshwari-05' },
   description:
