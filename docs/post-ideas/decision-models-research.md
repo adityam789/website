@@ -74,3 +74,10 @@ Companion to `decision-models-series.md` (the outline). Where the two disagree, 
 - HackerNoon "20 best open-source decision models": secondary; its claims are now sourced to TypeSafe docs. Removed.
 - eesel pages: replaced by Google, Cloudflare and Perplexity primaries. Removed.
 - dsebastien: kept only for the triage and "many narrow questions" patterns, which are that author's advice, attributed as such.
+
+## Own experiment (run 14 Nov 2026; code and results in the separate `decision-models-experiment` repo)
+
+- P · Strands Decider's `training/sources.md` lists `banking77` and `spam` (`ucirvine/sms_spam`) as training data, so those two tasks are not zero-shot for that model. Bitext retail banking and Enron spam are absent from the list. https://huggingface.co/StrandsAgents/strands-decider-2B-qwen3.5-v1-2610
+- Measured · Unseen tasks, decision model as shipped / after a fit on a few hundred labels / encoder on the same labels: Bitext accuracy 0.940 / 0.971 / 0.981; Enron accuracy 0.793 / 0.853 / 0.960, coverage at 0.90 of 0.008 / 0.603 / 0.988.
+- Measured · Seen tasks: Banking77 0.861 as shipped, 0.860 fitted, encoder 0.748 on 385 labels and 0.925 on 10,003; SMS spam 0.988 before and after the fit, coverage at 0.90 from 0.377 to 0.982.
+- Limits: one seed, 520 to 770 test items, one open model, no hosted model tested, no prompt tuning. Every number comes from `results/results.json` in that repo.
