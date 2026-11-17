@@ -25,6 +25,8 @@ const IMAGE_SIZES: Record<string, [number, number]> = {
   'swarm-vs-hierarchy.png': [1672, 941],
   'checklist.png': [1254, 1254],
   'decision-card.png': [1254, 1254],
+  'same-facts-two-orders.png': [1672, 941],
+  'montage-pipeline.png': [1672, 941],
 };
 
 const PILLS: Record<string, string> = {
