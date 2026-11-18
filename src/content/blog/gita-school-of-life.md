@@ -3,6 +3,8 @@ title: "The Gita School of Life: A Curriculum for Monday Morning"
 excerpt: "On 16 November I spoke at a Gita Jayanti speech competition. I didn't win, and I came away having learned more than if I had. The speech, rewritten for reading: Arjuna's freeze, the three paths, and what the stages of life ask of a young professional."
 date: "2026-11-18"
 tag: "Life"
+cover: "/blog/gita-school-of-life/cover.png"
+coverAlt: "A simple geometric chariot with a glowing amber sphere as its passenger, pulled by three teal horses, with fine reins running to a small dial, against a calm teal horizon."
 ---
 
 ## No losers
