@@ -191,7 +191,7 @@ export const PROJECTS: Project[] = [
     year: '2026',
     short: 'Local-first, AI-assisted file sorter: swipe each file toward its folder',
     desc: 'Tidies messy folders like Downloads on macOS and Windows. A local daemon scans and embeds each file and suggests a destination in your existing folder tree; you swipe on desktop or phone to confirm, pick an alternative or send it to an inbox. It finds duplicates, proposes new folders by clustering and can auto-sort watched folders. Every move is journaled and undoable, and nothing leaves the machine. On its synthetic test corpus, the right folder is in the top three suggestions about 99% of the time.',
-    tags: ['Python', 'FastAPI', 'SQLite', 'fastembed', 'scikit-learn', 'React', 'TypeScript', 'Ollama'],
+    tags: ['LLM reranking', 'Embeddings', 'Vector search', 'Clustering (HDBSCAN)', 'Python', 'FastAPI', 'React + TypeScript'],
     href: 'https://github.com/adityam789/swipesort',
     image: {
       src: '/projects/swipesort.png',
@@ -206,7 +206,7 @@ export const PROJECTS: Project[] = [
     year: '2026',
     short: 'An open decision model, a cheap fit and a fine-tuned encoder, tested on four tasks',
     desc: 'A small reproducible test of Strands Decider 2B on four public classification tasks: as shipped, after a cheap calibration fit on a few hundred labels, and against a fine-tuned DistilRoBERTa. Reports accuracy, calibration error and coverage with confidence intervals. Two of the four tasks were in the model\'s own training list, so the two unseen tasks carry the zero-shot result. It is the experiment behind a three-part blog series.',
-    tags: ['Python', 'PyTorch', 'Transformers', 'scikit-learn', 'Strands Decider'],
+    tags: ['Model evaluation', 'Calibration', 'Fine-tuning', 'PyTorch', 'Transformers', 'scikit-learn'],
     href: 'https://github.com/adityam789/decision-models-experiment',
   },
   {
@@ -214,7 +214,7 @@ export const PROJECTS: Project[] = [
     year: '2026',
     short: 'Sort photos by person and search them in plain language, fully offline',
     desc: 'Groups a messy photo folder into one folder per person, or finds every photo of one person, using InsightFace face embeddings and clustering on CPU. A photo index answers plain-language queries: dates, places and names become exact filters and the rest is ranked with SigLIP 2. Everything runs locally, with a CLI and a local web app.',
-    tags: ['Python', 'InsightFace', 'SigLIP 2', 'ONNX Runtime', 'scikit-learn', 'SQLite', 'Gradio'],
+    tags: ['Computer vision', 'Face embeddings', 'Clustering (DBSCAN)', 'Multimodal search (SigLIP 2)', 'Local LLMs', 'Python', 'ONNX Runtime'],
     href: 'https://github.com/adityam789/image_face_detection',
     image: {
       src: '/projects/face-sorter-finder.png',
@@ -229,7 +229,7 @@ export const PROJECTS: Project[] = [
     year: '2026',
     short: 'Turns a topic into a vertical talking-head video: research, script, voice, avatar',
     desc: 'Researches a topic (RSS, web search, optionally Reddit), has an LLM write a short narration, synthesises speech with Coqui XTTS v2, animates a still image with SadTalker and composites a 1080x1920 video with ffmpeg. Each stage writes one file per run, so runs are resumable and inspectable. An offline mode swaps every external service for fakes. A feature-complete prototype, now archived.',
-    tags: ['Python', 'OpenRouter', 'Coqui XTTS v2', 'SadTalker', 'ffmpeg', 'FastAPI'],
+    tags: ['Agentic pipeline', 'LLMs', 'Text-to-speech', 'Talking-head video', 'Python', 'FastAPI', 'ffmpeg'],
     href: 'https://github.com/adityam789/ai-avatar-agent',
     image: {
       src: '/projects/ai-avatar-agent-demo.gif',
@@ -243,15 +243,15 @@ export const PROJECTS: Project[] = [
     name: 'Market Lens',
     year: '2025',
     short: 'Multi-source financial intelligence with LLM-powered sentiment analysis',
-    desc: 'Python service over 6+ financial APIs (Alpha Vantage, Finnhub, NewsAPI) with deduplication and LLM sentiment scoring that feeds live portfolio tracking in Google Sheets.',
-    tags: ['Python', 'Claude', 'Grok', 'Alpha Vantage', 'Finnhub', 'Google Sheets'],
+    desc: 'Python service over 6+ financial APIs (Alpha Vantage, Finnhub, NewsAPI), orchestrated as a LangGraph workflow, with deduplication and LLM sentiment scoring that feeds live portfolio tracking in Google Sheets.',
+    tags: ['LangGraph', 'LLMs (Claude, Grok)', 'Sentiment analysis', 'Financial APIs', 'asyncio', 'Python', 'Google Sheets'],
   },
   {
     name: 'Deep Learning From Scratch',
     year: '2022',
     short: 'CNN, LSTM, and logistic regression, built without high-level libraries',
     desc: 'Trained an LSTM on classical guitar compositions to generate new musical sequences. Also implemented logistic regression, CNNs and MLPs from scratch.',
-    tags: ['Python', 'TensorFlow', 'music21'],
+    tags: ['Neural networks from scratch', 'Backpropagation', 'LSTMs', 'NumPy', 'TensorFlow', 'Python'],
     href: 'https://github.com/adityam789/Deep-Learning',
   },
   {
@@ -259,7 +259,7 @@ export const PROJECTS: Project[] = [
     year: '2021',
     short: 'Back-end crypto trading sim with real-time Coinbase data and 2FA auth',
     desc: 'Back-end crypto trading simulator with real-time Coinbase exchange data, secure authentication, two-factor auth and API key management.',
-    tags: ['Node.js', 'Express', 'MongoDB', 'Coinbase API'],
+    tags: ['TypeScript', 'Node.js', 'Express', 'MongoDB', 'Auth (JWT, OAuth, 2FA)', 'AWS Lambda'],
     href: 'https://github.com/adityam789/crypto_transaction_api',
   },
 ];
