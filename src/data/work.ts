@@ -187,6 +187,20 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
+    name: 'SwipeSort',
+    year: '2026',
+    short: 'Local-first, AI-assisted file sorter: swipe each file toward its folder',
+    desc: 'Tidies messy folders like Downloads on macOS and Windows. A local daemon scans and embeds each file and suggests a destination in your existing folder tree; you swipe on desktop or phone to confirm, pick an alternative or send it to an inbox. It finds duplicates, proposes new folders by clustering and can auto-sort watched folders. Every move is journaled and undoable, and nothing leaves the machine. On its synthetic test corpus, the right folder is in the top three suggestions about 99% of the time.',
+    tags: ['Python', 'FastAPI', 'SQLite', 'fastembed', 'scikit-learn', 'React', 'TypeScript', 'Ollama'],
+    image: {
+      src: '/projects/swipesort.png',
+      alt: 'Illustration of the SwipeSort desktop app: an input folder tree on the left, an output folder tree on the right, and a central card for invoice_0412.pdf suggesting Finance/Invoices at 91% confidence, with swipe directions for Trash, Choices, Skip and the suggested folder.',
+      width: 1600,
+      height: 900,
+      caption: 'Illustration of the desktop UI with fictional files, made for this page. Not a screenshot.',
+    },
+  },
+  {
     name: 'Decision Model Experiment',
     year: '2026',
     short: 'An open decision model, a cheap fit and a fine-tuned encoder, tested on four tasks',
