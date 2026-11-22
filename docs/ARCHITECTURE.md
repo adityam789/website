@@ -44,7 +44,9 @@ src/components/       Nav, Footer, Reveal, ScrollProgress, ThemeProvider (+ Nav/
 src/components/dmp/   ActOneRFC, ActTwoAppStore, ActThreeJira, ActFourPR, ProceedPrompt, TerminalTransition,
                       ConfettiButton, StyledComponentsRegistry
 src/content/blog/     *.md posts (frontmatter: title, excerpt, date, tag, cover, coverAlt, draft)
-src/components/blog/  PostBody (markdown renderer + custom elements), Ladder, TableOfContents
+src/components/blog/  PostBody (markdown renderer + custom elements), Ladder, TableOfContents,
+                      diagrams/ + charts/ (static SVG), motion/ (animation kit: useClock, MotionFigure, math, road),
+                      animations/ (animated client figures; see FEATURE_RECIPES §4.5)
 src/lib/blog.ts       getAllPosts/getPost/formatDate
 public/blog/<slug>/   post images (add known sizes to IMAGE_SIZES in PostBody.tsx)
 src/lib/dmp/          config.ts (navigationMode), tokens.ts

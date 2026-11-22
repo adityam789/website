@@ -14,6 +14,13 @@ import DecisionHead from './diagrams/DecisionHead';
 import JudgeCost from './charts/JudgeCost';
 import MissionTime from './charts/MissionTime';
 import DecisionFit from './charts/DecisionFit';
+import DenoiseLatency from './charts/DenoiseLatency';
+import AveragingTrap from './animations/AveragingTrap';
+import ScoreValleys from './animations/ScoreValleys';
+import AnchorDenoise from './animations/AnchorDenoise';
+import WhichPathNoised from './animations/WhichPathNoised';
+import ZigZag from './animations/ZigZag';
+import GroupRanking from './animations/GroupRanking';
 import styles from './PostBody.module.css';
 
 /** Known image sizes (px) so next/image can reserve space without layout shift. */
@@ -122,6 +129,14 @@ const components: Components = {
     if (className === 'language-chart-judge-cost') return <JudgeCost />;
     if (className === 'language-chart-mission-time') return <MissionTime />;
     if (className === 'language-chart-decision-fit') return <DecisionFit />;
+    if (className === 'language-chart-denoise-latency') return <DenoiseLatency />;
+    // animated figures (client components built on motion/useClock)
+    if (className === 'language-motion-averaging') return <AveragingTrap />;
+    if (className === 'language-motion-score-valleys') return <ScoreValleys />;
+    if (className === 'language-motion-anchor-denoise') return <AnchorDenoise />;
+    if (className === 'language-motion-which-path-noised') return <WhichPathNoised />;
+    if (className === 'language-motion-zigzag') return <ZigZag />;
+    if (className === 'language-motion-group-ranking') return <GroupRanking />;
     if (className) {
       return (
         <pre className={styles.codeBlock}>

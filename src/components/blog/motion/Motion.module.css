@@ -1,0 +1,321 @@
+/* Shared styles for animated blog figures (components/blog/animations). Tokens only, so dark mode follows. */
+.figure {
+  --m-teal: #2bb5a0;
+  --m-teal-soft: rgba(43, 181, 160, 0.14);
+  --m-teal-text: #1a8574;
+  margin: 2.5em 0;
+  padding: 1.25rem 1.25rem 1rem;
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  font-family: var(--font-sans);
+}
+
+:global(html.dark) .figure {
+  --m-teal-soft: rgba(43, 181, 160, 0.18);
+  --m-teal-text: #4fd1bc;
+}
+
+.heading {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* ── controls ── */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius-full);
+  background: var(--bg);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:hover {
+  color: var(--text-primary);
+  border-color: var(--text-tertiary);
+}
+
+.btn:focus-visible,
+.phase:focus-visible,
+.range:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.phases {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.phase {
+  padding: 5px 10px;
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius-full);
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.phase:hover {
+  color: var(--text-primary);
+}
+
+.phaseOn {
+  border-color: var(--m-teal);
+  background: var(--m-teal-soft);
+  color: var(--text-primary);
+}
+
+.scrub {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 10px;
+  min-width: 200px;
+}
+
+.range {
+  flex: 1;
+  accent-color: var(--m-teal);
+}
+
+.readout {
+  min-width: 92px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+.caption {
+  margin-top: 0.75rem;
+  font-size: 12px;
+  text-align: center;
+  color: var(--text-tertiary);
+}
+
+/* ── svg atoms ── */
+.road {
+  fill: var(--surface-subtle);
+  stroke: var(--border-strong);
+  stroke-width: 1.5;
+}
+
+.laneLine {
+  fill: none;
+  stroke: var(--border-strong);
+  stroke-width: 1.5;
+  stroke-dasharray: 8 8;
+}
+
+.car {
+  fill: var(--text-primary);
+}
+
+.windshield {
+  fill: var(--bg);
+  opacity: 0.85;
+}
+
+.obstacle {
+  fill: var(--surface);
+  stroke: var(--text-tertiary);
+  stroke-width: 1.5;
+}
+
+.obstacleHit {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.ghost {
+  fill: none;
+  stroke: var(--text-tertiary);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 5;
+  opacity: 0.55;
+}
+
+.trailTeal,
+.trailAmber,
+.trailInk,
+.trailMuted {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.trailTeal {
+  stroke: var(--m-teal);
+  stroke-width: 2;
+}
+
+.trailAmber {
+  stroke: var(--accent);
+  stroke-width: 2.5;
+}
+
+.trailInk {
+  stroke: var(--text-primary);
+  stroke-width: 2.5;
+}
+
+.trailMuted {
+  stroke: var(--text-tertiary);
+  stroke-width: 1.3;
+}
+
+.dashed {
+  stroke-dasharray: 5 5;
+}
+
+.dotTeal {
+  fill: var(--m-teal);
+}
+
+.dotAmber {
+  fill: var(--accent);
+}
+
+.distData {
+  fill: var(--border-strong);
+}
+
+.curveAmber {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.curveTeal {
+  fill: none;
+  stroke: var(--m-teal);
+  stroke-width: 2;
+}
+
+.curveInk {
+  fill: none;
+  stroke: var(--text-secondary);
+  stroke-width: 2;
+}
+
+.axis {
+  stroke: var(--border-strong);
+  stroke-width: 1;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  fill: var(--text-primary);
+}
+
+.sub {
+  font-size: 12.5px;
+  fill: var(--text-secondary);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  fill: var(--text-tertiary);
+}
+
+.labelAmber {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  fill: var(--accent-text);
+}
+
+.labelTeal {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  fill: var(--m-teal-text);
+}
+
+.chip {
+  fill: var(--surface);
+  stroke: var(--border-strong);
+  stroke-width: 1;
+}
+
+.chipTeal {
+  fill: var(--m-teal-soft);
+  stroke: var(--m-teal);
+  stroke-width: 1;
+}
+
+.chipAmber {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 1;
+}
+
+.panel {
+  fill: var(--surface);
+  stroke: var(--border-strong);
+  stroke-width: 1;
+}
+
+.panelOn {
+  fill: var(--m-teal-soft);
+  stroke: var(--m-teal);
+  stroke-width: 1.5;
+}
+
+.barTeal {
+  fill: var(--m-teal);
+}
+
+.barAmber {
+  fill: var(--accent);
+}
+
+/* Wide figures stay legible on phones: keep a minimum drawing width and scroll sideways. */
+@media (max-width: 640px) {
+  .figure {
+    padding: 1rem 0.75rem 0.75rem;
+  }
+
+  .stage {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .stage .svg {
+    min-width: 600px;
+  }
+}
