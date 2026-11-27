@@ -11,7 +11,7 @@ Last week a few friends and I got stuck on one headline. A mathematician said he
 
 We landed somewhere I didn't expect. AI is going to take over **verifiable output in language**: proofs, code, anything where a checker can say yes or no. That's a lot of work, and it's growing. But that's what it is. It isn't human-like intelligence, and it doesn't replace everything a person does.
 
-Around the same time I was filling a notepad while listening to Yann LeCun on [Unsupervised Learning with Jacob Effron](https://www.youtube.com/watch?v=ngBraLDqzdI), with my own thoughts in the margins. This post is those notes, cleaned up. Each section starts with what I wrote, then what I found when I checked it, then where I'm still unsure. The notes are the spine. The research is there to hold them up or push back.
+Around the same time I was filling a notepad while listening to Yann LeCun on [Unsupervised Learning with Jacob Effron](https://www.youtube.com/watch?v=ngBraLDqzdI), with my own thoughts in the margins. This post is those notes, cleaned up and checked against the research. Some held up. Some didn't.
 
 ## The week a proof got checked by a machine
 
@@ -25,7 +25,7 @@ That's the pattern this post is about.
 
 ## Checkable work is where LLMs win
 
-**From my notes:** *Math and coding are a substrate of reasoning (language itself is), not reasoning itself.*
+The first thing I wrote down: math and coding are a *substrate* of reasoning, the way language itself is, not reasoning itself.
 
 I still like that line. Code and proofs are reasoning written down in a language strict enough to check. That strictness is exactly what makes them easy to automate. You can generate a thousand attempts and keep the ones that compile, pass the tests, or type-check in Lean.
 
@@ -36,17 +36,17 @@ That's also how the newest models got good at them. Reinforcement learning with 
 
 I wrote about this from the engineering side in [Looks Good to the Model](/blog/looks-good-to-the-model): agents are trustworthy in proportion to how machine-checkable a task is. The Riemann week is the same idea at the top end of mathematics.
 
-**From my notes:** *Augmented LLM with RLVR is a form of planning at the end of the day, but insufficient. It is a lot of work for sure, but it won't be zero-shot or the base model itself.*
+My next note was that an LLM augmented with RLVR is a form of planning at the end of the day, just an insufficient one. It takes a lot of work, and what comes out isn't zero-shot and isn't the base model itself.
 
 The research mostly agrees, and is more specific than I was. A [NeurIPS 2025 oral](https://arxiv.org/abs/2504.13837) tested RLVR-trained models against their own base models across math, code and visual reasoning. With one try, the RL models win. With many tries, the *base* models solve more problems, and the range of problems the model can solve tends to shrink as RL training goes on. Their reading: RLVR makes a model better at finding paths it could already find. It doesn't teach new ones.
 
-**Where I'd go further than my notes:** RLVR is close to useless for creative or truly open-ended work. It needs a checker, and creativity doesn't come with one. The evidence points the same way from the other side. Post-training tends to *narrow* what models produce: RLHF [reduces output diversity](https://arxiv.org/abs/2310.06452), and a NeurIPS 2025 study of 26,000 open-ended prompts found an ["Artificial Hivemind"](https://arxiv.org/abs/2510.22954), where models repeat themselves and different models converge on similar answers. Sharpening toward a reward is the opposite of exploring.
+I'd go further than my notes did. RLVR is close to useless for creative or truly open-ended work. It needs a checker, and creativity doesn't come with one. The evidence points the same way from the other side. Post-training tends to *narrow* what models produce: RLHF [reduces output diversity](https://arxiv.org/abs/2310.06452), and a NeurIPS 2025 study of 26,000 open-ended prompts found an ["Artificial Hivemind"](https://arxiv.org/abs/2510.22954), where models repeat themselves and different models converge on similar answers. Sharpening toward a reward is the opposite of exploring.
 
-**Where I'm unsure:** the line keeps moving. A year ago, "is this proof of a famous conjecture right?" wasn't machine-checkable in practice. Now it is, because someone formalized enough of the math. The real question isn't "what can LLMs do?" It's "what can we build checkers for?"
+Where I'm unsure is that the line keeps moving. A year ago, "is this proof of a famous conjecture right?" wasn't machine-checkable in practice. Now it is, because someone formalized enough of the math. The real question isn't "what can LLMs do?" It's "what can we build checkers for?"
 
 ## Hinton's brain math, and why I don't fully buy it
 
-**From my notes:** *Geoffrey Hinton did some math on brain connections vs. machine "virtual neurons" for the same degree of learning (backprop or some form of gradient, though nobody knows clearly how neurons learn). The number was 10, and GPT-4 was close to it. But that rests on strong assumptions: the "10" and that backprop is the same style of learning as intelligence.*
+Geoffrey Hinton has done some math comparing the brain's connections with a machine's "virtual neurons" for the same amount of learning, assuming backprop or some kind of gradient, even though nobody knows clearly how neurons learn. The number that comes out is around 10, and GPT-4 is close to it. When I wrote that down, I added that it rests on strong assumptions: the "10" itself, and the idea that backprop is the same kind of learning as intelligence.
 
 Here's the argument as Hinton usually gives it. The biggest chatbots have [about a trillion connections](https://digital-scholarship.org/digitalkoans/?p=50226), the brain about 100 trillion, yet the chatbot knows far more than any one person. In an Oxford lecture he put it this way: even if you only use 10% of your 100 trillion weights, you have [10 trillion weights](https://analyticsindiamag.com/geoffrey-hinton-says-ai-is-very-close-to-being-as-good-as-human-brains/). His conclusion: backprop may be a better learning algorithm than whatever the brain does.
 
@@ -58,41 +58,39 @@ Same arithmetic, opposite conclusions. That tells me parameter counts are the wr
 
 ## Language is a thin slice of the world
 
-**From my notes:** *High-dimensional, noisy, continuous, messy: that's what the real world is. An LLM is language, which can't play in the physical world.*
-
-**From my notes:** *The doctor example: an LLM can't replace healthcare because it only gets the book language, never the practical experience.*
+The real world is high-dimensional, noisy, continuous and messy. An LLM is language, and language can't play in the physical world. The example I wrote next to that was a doctor: an LLM can't replace healthcare, because it only gets the book language, never the practical experience.
 
 The cleanest version of this is LeCun's driving comparison. A teenager can learn to drive in [about 20 hours](https://ai.meta.com/blog/yann-lecun-advances-in-ai-research/), while self-driving systems need millions of labeled examples or reinforcement-learning trials and still aren't as reliable. I wrote about that data hunger from the inside in my [diffusion planning post](/blog/left-right-or-straight-into-the-wall). Even the best planners there are copying human driving, not understanding roads.
 
-**From my notes:** *We're running out of open text data, so what's left is commercial data or synthetic data.*
+Then there's the data. We're running out of open text, so what's left is commercial data or synthetic data.
 
 This one is well supported. Epoch AI estimates the usable stock of public human text at [around 300 trillion tokens](https://epoch.ai/blog/will-we-run-out-of-data), and projects it gets used up [sometime between 2026 and 2032](https://fortune.com/2024/06/06/ai-training-bottleneck-google-meta-openai/). We're inside that window now.
 
-**From my notes:** *Most robotics is data-intensive and becomes imitation learning or RL, but data collection is expensive and it's brittle in new scenarios. Synthetic data isn't the end goal either. It works in RL and simulation but stays data-inefficient. Scale vs. data-efficient architecture. Even imitation hasn't produced personal or industrial robots at scale.*
+Robotics doesn't escape this. Most of it is data-intensive and ends up as imitation learning or RL, but collecting the data is expensive and the result is brittle in new scenarios. Synthetic data isn't the end goal either: it works in RL and simulation but stays data-inefficient. The real tension is scale versus data-efficient architecture, and even imitation hasn't produced personal or industrial robots at scale.
 
-I'd sum my notes up as: text ran out, and the physical world doesn't come pre-written. A kid takes in an enormous amount of sight and touch before ever reading a word. None of it arrives as tokens.
+Put shortly: text ran out, and the physical world doesn't come pre-written. A kid takes in an enormous amount of sight and touch before ever reading a word. None of it arrives as tokens.
 
 ## What would a "world model" even be?
 
-**From my notes:** *Train a deep network on data from a complex system to make a phenomenological model of that process. If it's action-conditioned, it's a world model (optimally).*
+Here's the definition I wrote down: train a deep network on data from a complex system and you get a phenomenological model of that process. If it's action-conditioned, it's a world model, ideally.
 
-I like this definition because it's testable: given the state and an action, predict what happens next. My notes then listed what a world model buys you:
+I like this definition because it's testable: given the state and an action, predict what happens next. Here's what a world model buys you:
 
 1. An agent can **predict the consequences of its actions**.
 2. That enables **planning, reasoning, searching and optimization**, and none of it has to be autoregressive.
 3. The hard part is **choosing the level of abstraction** to plan at. You plan a trip in cities, not in footsteps.
 
-**From my notes:** *Objective-driven models are the future: a good cost function and an efficient optimizer. The catch: the cost function has to be accurate, and you also need better auxiliary objectives to aid the final goal.*
+I think objective-driven models are the future: a good cost function plus an efficient optimizer. The catch is that the cost function has to be accurate, and you also need better auxiliary objectives to help reach the final goal.
 
-This is LeCun's ["objective-driven AI"](https://openreview.net/pdf?id=BZ5a1r-kVsf) proposal: instead of producing the next token, the system searches for actions that minimize a cost according to its world model. My catch is the honest weak spot. A planner is only as good as its cost function, and nobody has a general one for "do what a sensible person would do." In my diffusion post, the planners leaned on a learned scorer for exactly this reason.
+This is LeCun's ["objective-driven AI"](https://openreview.net/pdf?id=BZ5a1r-kVsf) proposal: instead of producing the next token, the system searches for actions that minimize a cost according to its world model. That catch is the honest weak spot. A planner is only as good as its cost function, and nobody has a general one for "do what a sensible person would do." In my diffusion post, the planners leaned on a learned scorer for exactly this reason.
 
-**Still open for me:** *What is a hierarchical world model?* LeCun's answer is stacked predictors, each at a coarser timescale, so the top plans in big steps and the bottom fills in motor detail. I want to read that part of his paper properly before I say more.
+One question I haven't closed: what is a *hierarchical* world model? LeCun's answer is stacked predictors, each at a coarser timescale, so the top plans in big steps and the bottom fills in motor detail. I want to read that part of his paper properly before I say more.
 
 ## Three bets on how to build one
 
-My notes compared a few approaches. The research made them clearer, so here they are side by side. Each deserves its own post.
+There are a few competing bets, and the research made them clearer, so here they are side by side. Each deserves its own post.
 
-**Bet 1: Predict in representation space (JEPA).** **From my notes:** *JEPA learns representations of images and video rather than generating pixels like VAEs, autoencoders, denoising autoencoders, or even LLMs.* The idea: don't predict every pixel of the next frame. Encode the scene, then predict the *encoding* of what comes next, so the model can ignore detail that's unpredictable anyway, like leaves moving in the wind. The strongest evidence so far is [V-JEPA 2](https://arxiv.org/abs/2506.09985). It learned from over a million hours of internet video, then got a small action-conditioned predictor trained on 62 hours of unlabeled robot video. It ran zero-shot on robot arms in two different labs, planning pick-and-place toward image goals.
+**Bet 1: Predict in representation space (JEPA).** JEPA learns representations of images and video instead of generating pixels the way VAEs, autoencoders, denoising autoencoders, or even LLMs do. The idea: don't predict every pixel of the next frame. Encode the scene, then predict the *encoding* of what comes next, so the model can ignore detail that's unpredictable anyway, like leaves moving in the wind. The strongest evidence so far is [V-JEPA 2](https://arxiv.org/abs/2506.09985). It learned from over a million hours of internet video, then got a small action-conditioned predictor trained on 62 hours of unlabeled robot video. It ran zero-shot on robot arms in two different labs, planning pick-and-place toward image goals.
 
 ```motion-pixels-vs-latents
 ```
@@ -110,14 +108,14 @@ That's what my note meant by pixel-by-pixel models being "trapped." Looking righ
 
 ## The collapse problem, in one picture
 
-**From my notes:** *What is representation collapse? Contrastive learning is one approach. Distillation is another: one encoder teaches the other (DINO), backprop on one and feed the other an exponential moving average, like a collection recipe. BYOL paper from DeepMind to read. Fun bit: I don't know how that teacher works or how distillation prevents collapse. Another pivot is a custom regularization to maximize information content and prevent collapse. Problem is measure? Need to see SigReg.*
+My notes here were mostly questions. What *is* representation collapse? Contrastive learning is one way around it. Distillation is another: one encoder teaches the other (DINO), with backprop on one and an exponential moving average feeding the other. I wrote down DeepMind's BYOL paper to read, and admitted I didn't know how that teacher works or why distillation prevents collapse. The last option was a custom regularizer that maximizes information content, which left me asking how you'd even measure that, plus a reminder to look at SIGReg.
 
 Collapse is the cheap trick every joint-embedding model is tempted by. If the goal is "make the two views of a scene agree," the easiest way to win is to map *everything* to the same point. Perfect agreement, zero information.
 
 ```motion-representation-collapse
 ```
 
-The fixes in my notes, in order:
+The fixes, in order:
 
 - **Contrastive:** pull matching pairs together and push other examples apart. It works, but needs many negatives.
 - **Distillation with a slow teacher:** [BYOL](https://arxiv.org/abs/2006.07733) and [DINO](https://arxiv.org/abs/2104.14294) train one network and update the teacher as a moving average of it. No negatives at all. My "I don't know why this works" is in good company: BYOL's authors mostly showed *that* it avoids collapse, and follow-up papers still call it surprising.
@@ -128,15 +126,13 @@ This deserves a full post with the math. For now, the picture is enough.
 
 ## Who owns the platform
 
-**From my notes:** *Anthropic and OpenAI ↔ Sun Microsystems and HP-UX. Eventually an open platform will take over, like Linux.*
-
-**From my notes:** *An open-source, fine-tunable, wide model is the AI assistant: platformable (sovereignty), in a federated learning style, kind of a sum of parameter vectors into a global converged model.*
+The analogy I scribbled: Anthropic and OpenAI are today's Sun Microsystems and HP-UX, and eventually an open platform takes over, the way Linux did. The version I'd bet on is an open-source, fine-tunable, wide model as the AI assistant. Countries could build on it for sovereignty, and train it federated-style, roughly a sum of parameter vectors converging into one global model.
 
 This is LeCun's argument almost word for word. In the late '90s, running an internet service meant buying [proprietary hardware and operating systems from Sun, Dell and HP](https://techstrong.ai/articles/for-most-of-the-world-open-source-ai-is-the-only-way-forward/), and Linux wiped that model out. He expects AI to become a platform, and platforms [tend to become open-source](https://www.technologyreview.com/2026/01/22/1131661/yann-lecuns-new-venture-ami-labs/amp/). My "sum of parameter vectors" is basically [federated averaging](https://arxiv.org/abs/1602.05629): train locally, average the weights into a shared model. That's how countries could contribute to a common model without handing over their data.
 
-**From my notes:** *LLMs won't be apolitical at all, and they're being sold with commercial intent.* Also: *language, speech and value systems (or political ones) are hard to capture in their diversity, at least in current models, because the data lacks that diversity.*
+I also don't think LLMs will be apolitical, and they're being sold with commercial intent. Language, speech and value systems, political ones included, are hard to capture in all their diversity, at least in current models, because the training data lacks that diversity.
 
-**The other side, fairly:** LeCun isn't neutral. His startup AMI Labs [raised about $1 billion](https://thenextweb.com/news/yann-lecun-xai-failure-ai-bubble-explosion) on the bet that LLMs are a dead end. Closed labs argue the most capable models shouldn't be released openly for safety reasons, and that frontier training costs mean only a few groups can build them either way. And Linux won on servers but not everywhere: phones and desktops still run plenty of closed software. I lean toward open, but "Linux wins" is a hope, not a law.
+To be fair to the other side, LeCun isn't neutral. His startup AMI Labs [raised about $1 billion](https://thenextweb.com/news/yann-lecun-xai-failure-ai-bubble-explosion) on the bet that LLMs are a dead end. Closed labs argue the most capable models shouldn't be released openly for safety reasons, and that frontier training costs mean only a few groups can build them either way. And Linux won on servers but not everywhere: phones and desktops still run plenty of closed software. I lean toward open, but "Linux wins" is a hope, not a law.
 
 ## Where I land, for now
 
