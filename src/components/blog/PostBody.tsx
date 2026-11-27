@@ -21,6 +21,9 @@ import AnchorDenoise from './animations/AnchorDenoise';
 import WhichPathNoised from './animations/WhichPathNoised';
 import ZigZag from './animations/ZigZag';
 import GroupRanking from './animations/GroupRanking';
+import Checkability from './animations/Checkability';
+import PixelsVsLatents from './animations/PixelsVsLatents';
+import RepresentationCollapse from './animations/RepresentationCollapse';
 import styles from './PostBody.module.css';
 
 /** Known image sizes (px) so next/image can reserve space without layout shift. */
@@ -137,6 +140,9 @@ const components: Components = {
     if (className === 'language-motion-which-path-noised') return <WhichPathNoised />;
     if (className === 'language-motion-zigzag') return <ZigZag />;
     if (className === 'language-motion-group-ranking') return <GroupRanking />;
+    if (className === 'language-motion-checkability') return <Checkability />;
+    if (className === 'language-motion-pixels-vs-latents') return <PixelsVsLatents />;
+    if (className === 'language-motion-representation-collapse') return <RepresentationCollapse />;
     if (className) {
       return (
         <pre className={styles.codeBlock}>
